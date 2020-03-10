@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interchunk>
+  <section-def-cats>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+    <def-cat n="itg">
+      <cat-item tags="itg"/>
+    </def-cat>
+    <def-cat n="num">
+      <cat-item tags="num"/>
+    </def-cat>
+    <def-cat n="det">
+      <cat-item tags="det"/>
+      <cat-item tags="det.*"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_num">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="a_def">
+      <attr-item tags="def"/>
+      <attr-item tags="ind"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="test1" npar="1">
+      <let>
+        <var n="number"/>
+        <lit v=""/>
+      </let>
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+    <rule comment="Rule: 'the' SN">
+      <pattern>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" part="a_def"/>
+                <lit-tag v = "def" />
+              </equal>
+            </test>
+            <out>
+              <chunk>
+                <lit v= "the"/>
+                <lit-tag v = "det"/>
+                <lit v= "{^the" />
+                <lit-tag v = "det.def.sp" />
+                <lit v= "$}" />
+              </chunk>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <chunk>
+                <lit v= "the"/>
+                <lit-tag v = "det"/>
+                <lit v= "{^a" />
+                <lit-tag v = "det.ind.sg" />
+                <lit v= "$}" />
+              </chunk>
+            </out>
+          </otherwise>
+        </choose>
+
+        <out>
+          <b/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+
+      </action>
+    </rule>
+
+    <rule comment="Rule: 'Number' SN">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="Rule: 'Determiner' SN">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="1" part = "a_num"/>
+          <clip pos="2" part = "a_num"/>
+        </let>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="Rule: where 'be' SN">
+      <pattern>
+        <pattern-item n="itg"/>
+        <pattern-item n="SN" />
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" part="a_num"/>
+                <lit-tag v = "sg" />
+              </equal>
+            </test>
+            <out>
+              <chunk>
+                <lit v= "v"/>
+                <lit-tag v = "SV"/>
+                <lit v= "{^be" />
+                <lit-tag v = "vbser.pres.p3.sg" />
+                <lit v= "$}" />
+              </chunk>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <chunk>
+                <lit v= "v"/>
+                <lit-tag v = "SV"/>
+                <lit v= "{^be" />
+                <lit-tag v = "vbser.pres.p3.pl" />
+                <lit v= "$}" />
+              </chunk>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" part="a_def"/>
+                <lit-tag v = "def" />
+              </equal>
+            </test>
+            <out>
+              <chunk>
+                <lit v= "the"/>
+                <lit-tag v = "det"/>
+                <lit v= "{^the" />
+                <lit-tag v = "det.def.sp" />
+                <lit v= "$}" />
+              </chunk>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <chunk>
+                <lit v= "the"/>
+                <lit-tag v = "det"/>
+                <lit v= "{^a" />
+                <lit-tag v = "det.ind.sg" />
+                <lit v= "$}" />
+              </chunk>
+            </out>
+          </otherwise>
+        </choose>
+
+        <out>
+          <b/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+
+      </action>
+    </rule>
+
+  </section-rules>
+</interchunk>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->

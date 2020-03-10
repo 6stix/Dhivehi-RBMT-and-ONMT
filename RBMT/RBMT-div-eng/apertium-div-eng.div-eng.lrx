@@ -1,0 +1,60 @@
+<rules>
+  <!--
+    This rule chooses "lightbulb" as the translation of "ބޮކި" when it is followed by "ދަނޑި".
+  -->
+  <rule>
+    <match lemma="ބޮކި" tags="n.*">
+      <select lemma="light bulb" tags="n.*"/>
+    </match>
+    <match lemma="ދަނޑި"/>
+  </rule>
+
+  <!--
+    This rule chooses "lightbulb" as the translation of "ބޮކި" when it is preceded by "ލެދް".
+  -->
+  <rule>
+    <match lemma="ލެދް"/>
+    <match lemma="ބޮކި" tags="n.*">
+      <select lemma="light bulb" tags="n.*"/>
+    </match>
+  </rule>
+
+  <!--
+    This rule chooses "bubble" as the translation of "ބޮކި" when it is preceded by "ސައިބޯނި".
+  -->
+  <rule>
+    <match lemma="ސައިބޯނި"/>
+    <match lemma="ބޮކި" tags="n.*">
+      <select lemma="bubble" tags="n.*"/>
+    </match>
+  </rule>
+
+  <!--
+    This rule chooses "bubble" as the translation of "ބޮކި" when it is preceded by "24".
+  -->
+  <rule>
+    <match lemma="24"/>
+    <match lemma="ގަޑި" tags="n.*">
+      <select lemma="hour" tags="n.*"/>
+    </match>
+  </rule>
+
+  <!--
+    This rule chooses "bubble" as the translation of "ބޮކި" when it is preceded by "އަތުކުރީ".
+  -->
+  <rule>
+    <match lemma="އަތުކުރީ"/>
+    <match lemma="ގަޑި" tags="n.*">
+      <select lemma="clock" tags="n.*"/>
+    </match>
+  </rule>
+
+</rules>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->

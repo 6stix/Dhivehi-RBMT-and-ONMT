@@ -1,0 +1,2 @@
+
+  lt-proc -w '/home/xluo1/ling73/ling073-div-eng/div-eng.automorf-untrimmed.bin' | cg-proc -w -1 -n '/home/xluo1/ling73/ling073-div-eng/div-eng.rlx.bin' | apertium-pretransfer| lt-proc -b '/home/xluo1/ling73/ling073-div-eng/div-eng.autobil.bin' | lrx-proc '/home/xluo1/ling73/ling073-div-eng/div-eng.autolex.bin' | apertium-transfer -b -t '/home/xluo1/ling73/ling073-div-eng/apertium-div-eng.div-eng.t1x'  '/home/xluo1/ling73/ling073-div-eng/div-eng.t1x.bin' 

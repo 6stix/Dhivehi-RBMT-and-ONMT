@@ -1,0 +1,276 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../div.autogen.hfst
+    Morph: ../div.automorf.hfst
+Tests:
+  '"-as"':
+    ބޮޑަށް<adv>:
+    - ބޮޑަށް
+    އަވަހަށް<adv>:
+    - އަވަހަށް
+    މައްޗަށް<adv>:
+    - މައްޗަށް
+  '"-kos"':
+    ކުޑަކޮށް<adv>:
+    - ކުޑަކޮށް
+    އާންމުކޮށް<adv>:
+    - އާންމުކޮށް
+    ޚާއްސަކޮށް<adv>:
+    - ޚާއްސަކޮށް
+  '"-n"':
+    ކަށަވަރުން<adv>:
+    - ކަށަވަރުން
+    ކުރިން<adv>:
+    - ކުރިން
+    މަދުން<adv>:
+    - މަދުން
+    މަތިން<adv>:
+    - މަތިން
+    ފަހުން<adv>:
+    - ފަހުން
+  Adjectives:
+    ބޮޑު<adj>:
+    - ބޮޑު
+    ތަފާތު<adj>:
+    - ތަފާތު
+  Adverbs:
+    މަދުން<adv>:
+    - މަދުން
+  Boats:
+    ނާ<n><nhum><pl><def><dir>:
+    - ނާފަހަރު
+    ބޯޓު<n><nhum><pl><def><dir>:
+    - ބޯޓުފަހަރު
+    މަތިންދާ ބޯޓު<n><nhum><pl><def><dir>:
+    - މަތިންދާ ބޯޓުފަހަރު
+  Cases:
+    ބަސް<n><nhum><sg><def><ablins>:
+    - ބަހުން
+    ބަސް<n><nhum><sg><def><dat>:
+    - ބަހަށް
+    ބަސް<n><nhum><sg><def><dir>:
+    - ބަސް
+    ބަސް<n><nhum><sg><def><gen>:
+    - ބަހުގެ
+    ބަސް<n><nhum><sg><def><loc>:
+    - ބަހުގައި
+    ބަސް<n><nhum><sg><def><soc>:
+    - ބަހާ
+    ކޮއްކޮ<n><hum><sg><def><dat>:
+    - ކޮއްކޮއަށް
+    ކޮއްކޮ<n><hum><sg><def><dir>:
+    - ކޮއްކޮ
+    ކޮއްކޮ<n><hum><sg><def><gen>:
+    - ކޮއްކޮގެ
+    ކޮއްކޮ<n><hum><sg><def><soc>:
+    - ކޮއްކޮއާ
+  Definite:
+    ރެފްރީ<n><hum><sg><def><dir>:
+    - ރެފްރީ
+    ކަރާ<n><nhum><pl><def><dir>:
+    - ކަރާތައް
+    މީހާ<n><hum><sg><def><dir>:
+    - މީހާ
+    ދޮންކެޔޮ<n><nhum><sg><def><dir>:
+    - ދޮންކެޔޮ
+  Definiteness: {}
+  Demonstratives: {}
+  Demonstratives as adverbs:
+    މި<adv><dem><deg1>+އޮތީ<v><ger>:
+    - މިއޮތީ
+  Demonstratives as determiners:
+    އެ<det><dem><deg3>+ކުއްތާތައް<n><nhum><pl><def><dir>:
+    - އެކުއްތާތައް
+    މި<det><dem><deg1>+ރާޖްޖެ<n><nhum><sg><def><dir>:
+    - މިރާޖްޖެ
+    ތި<det><dem><deg2>+ފޮތް<n><nhum><sg><def><dir>:
+    - ތިފޮތް
+  Demonstratives as pronouns:
+    އެއެއްޗެހި<prn><dem><deg3><pl><dir>:
+    - އެއެއްޗެހި
+    އޭތި<prn><dem><deg3><sg><dir>:
+    - އޭތި
+    މިއެއްޗެހި<prn><dem><deg1><pl><dir>:
+    - މިއެއްޗެހި
+    މީތި<prn><dem><deg1><sg><dir>:
+    - މީތި
+    ތިއެއްޗެހި<prn><dem><deg2><pl><dir>:
+    - ތިއެއްޗެހި
+    ތީތި<prn><dem><deg2><sg><dir>:
+    - ތީތި
+  Emphasis in Dhivehi:
+    ރަށް<n><nhum><sg><def><dir>+އޭ<mod>:
+    - ރަށޭ
+    ބުޅަލެއް<n><nhum><sg><ind><dir>+އޯ<mod>:
+    - ބުޅަލެކޯ
+    ބުޅާ<n><nhum><sg><def><dir>+އޭ<mod>:
+    - ބުޅަލޭ
+    އަތް<n><nhum><sg><def><dir>+އޯ<mod>:
+    - ތައްޓޯ
+    ދިވެހިން<n><hum><pl><def><dir>+އޯ<mod>:
+    - ދިވެހިންނޯ
+    ދޫނިތަކެއް<n><nhum><pl><ind><dir>+އޭ<mod>:
+    - ދޫނިތަކެކޭ
+  Human nouns:
+    ރަދުން<n><hum><pl><def><dir>:
+    - ރަދުނުން
+    ކަކާ<n><hum><pl><def><dir>:
+    - ކަކާއިން
+    ވެރިޔާ<n><hum><pl><def><dir>:
+    - ވެރިޔާއިން
+    މުދައްރިސް<n><hum><pl><def><dir>:
+    - މުދައްރިސުން
+    މުސްލިމު<n><hum><pl><def><dir>:
+    - މުސްލިމުން
+    ޑޮކްޓަރު<n><hum><pl><def><dir>:
+    - ޑޮކްޓަރުން
+    ޒުވާން<n><hum><pl><def><dir>:
+    - ޒުވާނުން
+  Indefinite:
+    ނަން<n><nhum><sg><ind><dir>:
+    - ނަމެއް
+    ބަދަލު<n><nhum><sg><ind><dir>:
+    - ބަދަލެއް
+    ބުޅާ<n><nhum><pl><ind><dir>:
+    - ބުޅާތަކެއް
+    ބޮއް<n><nhum><sg><ind><dir>:
+    - ބޮކެއް
+    ކާށި<n><nhum><pl><ind><dir>:
+    - ކާށިތަކެއް
+    މައްސަލަ<n><nhum><pl><ind><dir>:
+    - މައްސަލަތަކެއް
+    މީސް<n><hum><sg><ind><dir>:
+    - މީހެއް
+    މެހި<n><nhum><pl><ind><dir>:
+    - މެހިތަކެއް
+    ފޮތް<n><nhum><pl><ind><dir>:
+    - ފޮތްތަކެއް
+    ދިވެސް<n><hum><sg><ind><dir>:
+    - ދިވެއްސެއް
+    ޑޮކްޓަރު<n><hum><sg><ind><dir>:
+    - ޑޮކްޓަރެއް
+  Main Parts of Speech: {}
+  Names/Kinship terms:
+    ބައްޕަ<n><hum><pl><def><dir>:
+    - ބައްޕަމެން
+    މަންމަ<n><hum><pl><def><dir>:
+    - މަންމަމެން
+  Non Human nouns:
+    ހަތަރު<num>+ދޫނި<n><nhum><sg><def><dir>:
+    - ހަތަރުދޫނި
+    އާފަލު<n><nhum><pl><def><dir>:
+    - އާފަލުތައް
+    މަގު<n><nhum><pl><def><dir>:
+    - މަގުތައް
+    ފޮތް<n><nhum><pl><def><dir>:
+    - ފޮތްތައް
+    ދޫނި<n><nhum><pl><def><dir>:
+    - ދޫނިތައް
+    ދެ<num>+ފޮތް<n><nhum><sg><def><dir>:
+    - ދެފޮތް
+    ތަރި<n><nhum><pl><def><dir>:
+    - ތަރިތައް
+    ތިން<num>+ތަރި<n><nhum><sg><def><dir>:
+    - ތިންތަރި
+  Notes: {}
+  Nouns:
+    ކަކުނި<n><nhum><sg><def><dir>:
+    - ކަކުނި
+    ކަފަ<n><nhum><sg><def><dir>:
+    - ކަފަ
+    މީހާ<n><hum><sg><def><dir>:
+    - މީހާ
+    ފުލުހުން<n><hum><sg><def><dir>:
+    - ފުލުހުން
+  Personal Pronouns:
+    ކަލޭ<prn><pers><p2><sg><infm><dir>:
+    - ކަލޭ
+    ކަލޭމެން<prn><pers><p2><pl><infm><dir>:
+    - ކަލޭމެން
+    އަހަރެން<prn><pers><p1><sg><std><dir>:
+    - އަހަރެން
+    އަހަރެމެން<prn><pers><p1><pl><std><dir>:
+    - އަހަރެމެން
+    އަޅުގަނޑު<prn><pers><p1><sg><fm><dir>:
+    - އަޅުގަނޑު
+    އަޅުގަނޑުމެން<prn><pers><p1><pl><fm><dir>:
+    - އަޅުގަނޑުމެން
+    އެމީހުން<prn><pers><p3><pl><dst><dir>:
+    - އެމީހުން
+    އޭނާ<prn><pers><p3><sg><dst><dir>:
+    - އޭނާ
+    މަ<prn><pers><p1><sg><infm><dir>:
+    - މަ
+    މިމީހުން<prn><pers><p3><pl><prx><dir>:
+    - މިމީހުން
+    މީނާ<prn><pers><p3><sg><prx><dir>:
+    - މީނާ
+    ތިބޭފުޅާ<prn><pers><p2><sg><fm><dir>:
+    - ތިބޭފުޅާ
+    ތިމިހުން<prn><pers><p2><pl><std><dir>:
+    - ތިމިހުން
+  Pluralization: {}
+  Question Words:
+    ކާކު<itg>:
+    - ކާކު
+    ކިހިނެކް<itg>:
+    - ކިހިނެކް
+    ކީކް<itg>:
+    - ކީކް
+    ކީއްވެ<itg>:
+    - ކީއްވެ
+    ކޮން އިރަކު<itg>:
+    - ކޮން އިރަކު
+    ކޮން<itg>:
+    - ކޮން
+    ކޮބާ<itg>:
+    - ކޮބާ
+  Reference: {}
+  Simple Present Tense: {}
+  Unspecified:
+    ރެފްރީ<n><hum><sg><uns><dir>:
+    - ރެފްރީއަކު
+    ޤައުމު<n><nhum><pl><uns><dir>:
+    - ޤައުމުތަކަކު
+  Verbs:
+    ހަދަ<v><act><pprs>:
+    - ހަދަނީ
+    ހެދެ<v><pass><pprs>:
+    - ހެދެނީ
+    ކުރަ<v><act><pprs>:
+    - ކުރަނީ
+    ފެށެ<v><pass><pprs>:
+    - ފެށެނީ
+  a-stem verbs:
+    ހަދަ<v><act><pres><p1>:
+    - ހަދަން
+    ހަދަ<v><act><pres><p3>:
+    - ހަދާ
+    ނަށަ<v><act><pres><p1>:
+    - ނަށަން
+    ނަށަ<v><act><pres><p3>:
+    - ނަށާ
+    ބަލަ<v><act><pres><p1>:
+    - ބަލަން
+    ބަލަ<v><act><pres><p3>:
+    - ބަލާ
+    ކުރަ<v><act><pres><p1>:
+    - ކުރަން
+    ކުރަ<v><act><pres><p3>:
+    - ކުރޭ
+    ޖަހަ<v><act><pres><p1>:
+    - ޖަހަން
+    ޖަހަ<v><act><pres><p3>:
+    - ޖަހާ
+  e-stem verbs:
+    ކުޅެ<v><act><pres><p1>:
+    - ކުޅެން
+    ކުޅެ<v><act><pres><p3>:
+    - ކުޅޭ
+    ފެށެ<v><pass><pres><p3>:
+    - ފެށޭ
+    ދެކެ<v><act><pres><p1>:
+    - ދެކެން
+    ދެކެ<v><act><pres><p3>:
+    - ދެކޭ

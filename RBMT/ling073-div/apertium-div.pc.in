@@ -1,0 +1,8 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+srcdir=@datarootdir@/apertium/apertium-div
+
+Name: apertium-div
+Description: Finite-state morphological transducer and constraint grammar for Divehi 
+Version: @VERSION@
+

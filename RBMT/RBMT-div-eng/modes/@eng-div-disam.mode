@@ -1,0 +1,2 @@
+
+  lt-proc -w '/home/xluo1/ling73/ling073-div-eng/eng-div.automorf-untrimmed.bin' | cg-proc -w -1 -n -t '/home/xluo1/ling73/ling073-div-eng/eng-div.rlx.bin' 

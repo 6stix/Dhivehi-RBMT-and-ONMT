@@ -1,0 +1,110 @@
+Alphabet
+ޤ ޢ ޭ ޜ ޓ ޠ ޫ ީ ޯ ާ ށ ޑ ﷲ ޣ ޙ ޛ ޚ ޅ ޡ ޘ ޝ ޥ ޞ ޏ ޟ
+ ް އ  ެ ރ ތ ޔ  ު ި ން ނު  ޮ ޕ ަ ސ ދ ފ ގ ހ ޖ ކ ލ ޒ × ޗ ވ ބ ނ މ
+
+ %{H%}:0  %{C%}:0 %{I%}:0     
+ %{H%}:އި  %{C%}:އި %{I%}:ި 
+ %{H%}:އު  %{C%}:އެ %{I%}:ު
+          %{C%}:ު
+
+ %{S%}:އީ
+ %{S%}:އޭ
+
+ %{X%}:0  
+ %>:0 % 
+;
+
+Sets
+
+Vowel =  ަ  ާ  ެ  ޭ  ި  ީ  ޮ  ޯ  ު  ޫ ;
+Consonant = ހ ށ ނ ރ ބ ޅ ކ ވ މ ފ ދ ތ ލ ގ ޏ ސ ޑ ޒ ޓ ޔ ޕ ޖ ޗ ;
+Arabic    = ޙ ޚ ޢ ޣ ޥ ޛ ޘ ޡ ޤ ޝ ޞ ޟ ޜ ޠ ﷲ ;
+Placeholders = އ  ް ;
+
+ConsonantsWithPlaceholders = ރް ން ;
+ConsonantsWithU            = ރު ނު ;
+
+Rules
+
+"Change {H} to u after empty vowel"
+%{H%}:ު <=> ް: %>: _ ;
+
+"Change {H} to nohing after /i/ and /u/"
+%{H%}:0 <=> Vx: %>: _ ;
+      where Vx in ( ި ު );
+
+"Change {H} to i after vowels except /i/ and /u/"
+%{H%}:އި <=> Vx: %>: _ ;
+      where Vx in (  ަ  ާ  ެ  ޭ  ީ  ޮ  ޯ  ޫ );
+
+"Delete empty vowel before /u/"
+ް:0 <=> _ %>: :ު ;
+
+"Change {C} to nothing after vowels besides /i/ and /a/ and /e/"
+%{C%}:0 <=> Vx: %>: _ ;
+      where Vx in (  ާ   ޭ   ީ  ޮ  ޯ  ު  ޫ );
+ 
+"Change {C} to /i/ after /a/"
+%{C%}:އި <=> Vx: %>: _ ;
+      where Vx in ( ަ );
+
+"Change {C} to long /i/ after /i/"
+%{C%}:ީ <=>ި: %>: _ ;
+
+"Change {C} to u after empty vowel"
+%{C%}:ު <=> ް: %>: _ ;
+
+"Delete /i/ before long /i/"
+ި:0 <=> _ %>: :ީ ;
+
+"Delete empty vowel before > + empty consonant"
+ ް:0 <=> _ %>: އ: ;
+        _ :0 %>: އ: ;
+
+"Delete empty consonant after empty vowel + >"
+އ:0 <=>  ް: %>: _ ;
+         ް: :0 %>: _ ;
+
+"S-lenition: /s/ changed to /h/ before a vowel"
+ސ:ހ <=>  _  ް: %>: Consonant: ;
+         _  ް: %>: އ: ;
+         _  ް: %>: :Vowel ;
+    except
+        މ:  ު:  ދ:  ަ:  އ:  ް:  ރ:  ި:  _  ް: %>: %{H%}: ނ:  ް: ; 
+        !_  ް: %{X%}: %>: ;
+
+"Realise {I} as /i/ when after /a/ or /e/"
+%{I%}:ި <=> Vx: %>: _ ;
+      where Vx in ( ަ  ެ );
+
+"Change {I} to /u/ after empty vowel"
+%{I%}:ު <=> ް: %>: _ ;
+
+"Change {S} to /aa/ after /a/"
+%{S%}:ާ <=> ަ: %>: _ ;
+
+"Delete /a/ before /aa/"
+ަ:0 <=> _ %>: :ާ ;
+
+"Change {S} to /ee/ after /e/"
+%{S%}:ޭ <=> ެ: %>: _ ;
+
+"Change {C} to /ee/ after /e/"
+%{C%}:ޭ <=> ެ: %>: _ ;
+
+"Delete /e/ before /ee/"
+ެ:0 <=> _ %>: :ޭ ;
+
+!"Delete /u/ before another empty consonant and another vowel"
+!ު:0 <=> _ %>: އ: Vowel: ;
+
+!"Delete empty consonant when it's empty before and follows by a vowel "
+!އ:0 <=> :0 %>: _ Vowel: ;
+
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! https://github.com/hfst/
+! http://wiki.apertium.org/wiki/Twol
+! http://wiki.apertium.org/wiki/Hfst

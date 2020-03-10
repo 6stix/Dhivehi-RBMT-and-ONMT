@@ -1,0 +1,827 @@
+!Morphological Transducer for Divehi
+
+Multichar_Symbols
+
+! Part of speech categories
+%<n%>   ! Noun
+%<np%> ! Proper Nouns
+%<prn%> ! Pronoun
+%<v%>   ! Verb
+%<adj%> ! Adjective
+%<adv%> ! Adverb
+%<dem%> ! Demonstrative
+%<det%> ! Determiner
+%<num%> ! Numeral
+%<cnjcoo%> ! Conjunctions
+%<post%> ! Postposition
+%<mod%> ! Modal word for emphasis
+
+! Noun - Human/NonHuman
+%<hum%> ! Human
+%<nhum%>! Non-human
+
+! Noun - Number
+%<sg%>  ! Singular
+%<pl%>  ! Plural
+%<sp%>  ! Singular or Plural
+
+! Noun - Definiteness
+%<def%>  ! Definite
+%<ind%>  ! Indefinite
+%<uns%>  ! Unspecified
+%<ndef%> ! Not Definite (indefinite/unspecified)
+
+! Noun - Cases
+%<dir%> ! Direct
+%<gen%> ! Genitive
+%<loc%> ! Locative
+%<ablins%> ! Ablative/Instrumental
+%<dat%> ! Dative
+%<soc%> ! Sociative
+
+! Person
+%<pers%> ! Personal tag
+%<p1%> ! First Person
+%<p2%> ! Second Person
+%<p3%> ! Third Person
+
+! Verb - Transitivity
+%<tv%> ! Transitive
+%<iv%> ! Intransitive
+
+! Verb-Voices
+%<act%> ! Active
+%<pass%> ! Passive
+%<caus%> ! Causative
+
+! Verb - Tenses
+%<pprs%> ! Present Progressive Tense
+%<pres%> ! Simple Present Tense
+%<fut%> ! Future Tense
+%<past%> ! Past Tense
+%<perf%> ! Perfect Tense
+
+! Verb - Moods
+%<opt%> ! Optative Mood
+%<imp%> ! Imperative Mood
+%<pot%> ! Potential Mood
+
+! Demonstrative - Degrees
+%<deg1%> ! Degree 1
+%<deg2%> ! Degree 2
+%<deg3%> ! Degree 3
+
+! Question words
+%<itg%> ! Interrogative
+
+! Numeral type
+%<ord%> ! Ordinal
+
+! Proper Noun type
+%<ant%> ! first name
+%<cog%> ! last name
+%<top%> ! location
+%<org%> ! organization
+%<al%> ! others, msc
+
+! Other symbols
+% 
+%+
+%>      ! Morpheme boundary
+%<fm%> ! Formal
+%<infm%> ! Informal
+%<std%> ! Standard
+%<dst%> ! Distal
+%<prx%> ! Proximal
+%<neg%> ! Negation
+%<cont%> ! Continuous Marker
+%<succ%> ! Successive particle
+%<pos%> ! Possessive
+%<qnt%> ! Quantifiers
+%<ij%> ! Interjection
+
+! Puntuation symbols
+%<sent%> ! Sentence marker
+%<guio%> ! Hyphen
+%<cm%> ! Comma
+%<apos%> ! Apostrophe
+%<quot%> ! Quote marker
+%<rpar%> ! Parenthetical marker (right hand side)
+%<lpar%> ! Parenthetical marker (left hand side)
+
+! Morphophonological symbols
+%{H%}    ! For human plural nouns, either /i/, /u/, or //
+%{C%}    ! For genitive/locative case, either /i/, /e/, /u/ or //
+%{I%}    ! For ablative/instrumental case, /i/, or //
+%{S%}    ! For verb inflections, /aa/ or /ee/
+%{X%}    ! For human noun pluralization exceptions
+
+!!!!!!!! MORPHOTACTICS !!!!!!!!!
+
+LEXICON Root
+Noun-DemDet-Prefix ;
+Noun-Number-Prefix ;
+Noun-Roots ;
+Verb-Prefix ;
+PropNouns ;
+AdjRoot ;
+AdverbRoot ;
+PPRoot ; ! personal pronouns root
+DemonRoot ;
+ConjRoot ;
+QuestionRoot ;
+Determiners ;
+Punctuation ;
+ModalWords ;   ! Sentence-level modal words
+Proper-Nouns ;
+Postpositions ; 
+Numbers ;
+NumbersRoot ;
+Digits ; ! Use/Circ
+
+!Define unknown alphabet
+ޙޚޢޣޥޛޘޡޤޝޞޟޜޠﷲ:ޙޚޢޣޥޛޘޡޤޝޞޟޜޠﷲ # ; ! Arabic letters
+ހށނރބޅކވމފދތލގޏސޑޒޓޔޕޖޗ:ހށނރބޅކވމފދތލގޏސޑޒޓޔޕޖޗ #; ! Consonants
+
+!Nouns
+LEXICON Noun-DemDet-Prefix
+މި%<det%>%<dem%>%<deg1%>%+:މި Noun-Number-Prefix ;
+ތި%<det%>%<dem%>%<deg2%>%+:ތި Noun-Number-Prefix ;
+އެ%<det%>%<dem%>%<deg3%>%+:އެ Noun-Number-Prefix ;
+މި%<det%>%<dem%>%<deg1%>%+:މި Noun-Roots ; ! "this/these"
+ތި%<det%>%<dem%>%<deg2%>%+:ތި Noun-Roots ; ! "that/those"
+އެ%<det%>%<dem%>%<deg3%>%+:އެ Noun-Roots ; ! "that/those"
+Noun-Number-Prefix ;
+Noun-Roots ;
+
+LEXICON Noun-Number-Prefix
+އެއް%<num%>%+:އެއް Noun-Roots ; ! "one"
+ދެ%<num%>%+:ދެ Noun-Roots ; ! "two"
+ތިން%<num%>%+:ތިން Noun-Roots ; ! "three"
+ހަތަރު%<num%>%+:ހަތަރު Noun-Roots ; ! "four"
+ފަސް%<num%>%+:ފަސް Noun-Roots ; ! "five"
+ހަ%<num%>%+:ހަ Noun-Roots ; ! "six"
+ހަތް%<num%>%+:ހަތް Noun-Roots ; ! "seven"
+އަށް%<num%>%+:އަށް Noun-Roots ; ! "eight"
+ނުވަ%<num%>%+:ނުވަ Noun-Roots ; ! "nine"
+ދިހަ%<num%>%+:ދިހަ Noun-Roots ; ! "ten"
+
+LEXICON Noun-Roots
+HumanNounRoot ;
+NonHumanRoot ;
+BoatRoot ;
+KinshipRoot ;
+
+LEXICON Noun-Human
+%<n%>%<hum%>%<sg%>: HSG-Def-Cases ;
+%<n%>%<hum%>%<sg%>: HSG-nDef-Cases ;
+%<n%>%<hum%>%<pl%>:%>%{H%}ން HPL-Def-Cases ;
+!There is no plural H-nDef-Cases
+
+LEXICON Noun-Kinship
+%<n%>%<hum%>%<sg%>: HSG-Def-Cases ;
+%<n%>%<hum%>%<sg%>: HSG-nDef-Cases ;
+%<n%>%<hum%>%<pl%>:%>މެން HPL-Def-Cases ;
+
+LEXICON Noun-NonHuman
+%<n%>%<nhum%>%<sg%>: NH-Def-Cases ;
+%<n%>%<nhum%>%<sg%>: NH-nDef-Cases ;
+%<n%>%<nhum%>%<pl%>:%>ތައް NH-Def-Cases ;
+%<n%>%<nhum%>%<pl%>:%>ތައް NH-nDef-Cases ;
+
+LEXICON Noun-Boat
+%<n%>%<nhum%>%<sg%>: NH-Def-Cases ;
+%<n%>%<nhum%>%<sg%>: NH-nDef-Cases ;
+%<n%>%<nhum%>%<pl%>:%>ފަހަރު NH-Def-Cases ; ! -faharu
+%<n%>%<nhum%>%<pl%>:%>ފަހަރު NH-nDef-Cases ; ! -faharu
+
+! Definiteness-Case Combinations
+LEXICON NH-Def-Cases
+%<def%>%<dir%>: NounClitics ;  !Definite Direct
+%<def%>%<gen%>:%>%{C%}ގެ  NounClitics ;  !Definite Genetive
+%<def%>%<loc%>:%>%{C%}ގައި NounClitics ; !Definite Locative
+%<def%>%<dat%>:%>އަށް  NounClitics ;  !Definite Dative
+%<def%>%<ablins%>:%>%{I%}ން  NounClitics ;  !Definite Ablative/Instrumental
+%<def%>%<soc%>:%>އާ  NounClitics ;   !Definite Sociative
+
+LEXICON NH-nDef-Cases
+%<ind%>%<dir%>:%>އެއް NounClitics ;  !Indefinite Direct
+%<uns%>%<dir%>:%>އަކު NounClitics ;  !Unspecified Direct
+%<ndef%>%<gen%>:%>އެއްް%>%{C%}ގެ  NounClitics ;  !Indefinite Genetive
+%<ndef%>%<loc%>:%>އެއްް%>%{C%}ގައި NounClitics ; !Indefinite Locative
+%<ndef%>%<dat%>:%>އަކު%>އަށް  NounClitics ;  !Unspecified Dative
+%<ndef%>%<ablins%>:%>އަކު%>%{I%}ން  NounClitics ;  !Unspecified Ablative/Instrumental
+%<ndef%>%<soc%>:%>އަކު%>އާ  NounClitics ;   !Unspecified Sociative
+
+LEXICON HSG-Def-Cases
+%<def%>%<dir%>: NounClitics ; !Definite Direct
+%<def%>%<gen%>:%>%{C%}ގެ NounClitics ; !Definite Genetive
+%<def%>%<dat%>:%>އަށް NounClitics ; !Definite Dative
+%<def%>%<soc%>:%>އާ NounClitics ; !Definite Sociative
+
+LEXICON HSG-nDef-Cases
+%<ind%>%<dir%>:%>އެއްް NounClitics ; !Indefinite Direct
+%<uns%>%<dir%>:%>އަކު NounClitics ; !Unspecified Direct
+%<ndef%>%<gen%>:%>އެއްް%>ގެ NounClitics ; !Indefinite Genetive
+%<ndef%>%<dat%>:%>އަކު%>އަށް NounClitics ; !Unspecified Dative
+%<ndef%>%<soc%>:%>އަކު%>އާ NounClitics ; !Unspecified Sociative
+
+LEXICON HPL-Def-Cases
+%<def%>%<dir%>: NounClitics ; !Definite Direct
+%<def%>%<gen%>:%>ގެ NounClitics ; !Definite Genetive
+%<def%>%<dat%>:%>އަށް NounClitics ; !Definite Dative
+%<def%>%<soc%>:%>އާ NounClitics ; !Definite Sociative
+
+LEXICON NounClitics
+%+އޯ%<mod%>:އޯ # ;
+%+އޭ%<mod%>:އޭ # ;
+%+ވެސް%<mod%>:ވެސް # ;
+%+ވުރެ%<post%>:ވުރެ # ;
+%+އެވެ%<mod%>:އެވެ # ;
+# ;
+
+LEXICON PropNouns
+%<np%>: PropNounTypes ; 
+
+LEXICON PropNounTypes
+%<ant%>: PropNounNumber ; ! "first name"
+%<cog%>: PropNounNumber ; ! "last name"
+%<top%>: PropNounNumber ; ! "location"
+%<org%>: PropNounNumber ; ! "organization"
+%<al%>: PropNounNumber ; ! "others, msc"
+
+LEXICON PropNounNumber 
+%<sg%>: # ; 
+%<pl%>: # ; 
+%<sp%>: # ;
+
+!Adjectivies
+LEXICON AdjEnding
+%<adj%>: # ;
+
+!Adverbs
+LEXICON AdverbEnding
+%<adv%>: # ;
+
+!Question Words
+LEXICON Interrogative
+%<itg%>: # ;
+
+!Conjunction
+LEXICON ConjEnding
+%<cnjcoo%>: # ;
+
+!Verbs
+LEXICON Verb-Prefix 
+ނު%<neg%>%+:ނު VerbRoot ; ! "not"
+އެބަ%<cont%>%+:އެބަ VerbRoot ; ! "continous marker"
+VerbRoot ;
+
+LEXICON Verb-TV-ActiveStem  ! Transitive verbs
+%<v%>%<tv%>%<act%>: Verb-Tense-Person ;
+
+LEXICON Verb-TV-CausativeStem  ! Transitive
+%<v%>%<tv%>%<caus%>: Verb-Tense-Person ;
+
+LEXICON Verb-TV-PassiveStem   ! Transitive
+%<v%>%<tv%>%<pass%>: Verb-Tense-Person ;
+
+LEXICON Verb-IV-ActiveStem  ! Intransitive verbs
+%<v%>%<iv%>%<act%>: Verb-Tense-Person ;
+
+LEXICON Verb-IV-CausativeStem  ! Intransitive
+%<v%>%<iv%>%<caus%>: Verb-Tense-Person ;
+
+LEXICON Verb-IV-PassiveStem   ! Intransitive
+%<v%>%<iv%>%<pass%>: Verb-Tense-Person ;  ! Impersonal
+
+LEXICON Verb-Tense-Person
+%<pres%>%<p1%>:%>ން VerbClitics ;
+%<pres%>%<p3%>:%>%{S%} VerbClitics ;
+%<fut%>%<p1%>:%>%{S%}ނަން VerbClitics ;
+%<fut%>%<p3%>:%>%{S%}ނެ VerbClitics ;
+%<pprs%>:%>ނީ VerbClitics ;
+
+LEXICON VerbClitics
+%+އެވެ%<mod%>:އެވެ # ;
+# ;
+
+!PP = Personal Pronouns
+ 
+LEXICON PPFirstSGInf
+%<prn%>%<pers%>%<p1%>%<sg%>%<infm%>: PronounCase ;
+LEXICON PPFirstSGStd
+%<prn%>%<pers%>%<p1%>%<sg%>%<std%>: PronounCase ;
+LEXICON PPFirstSGFm
+%<prn%>%<pers%>%<p1%>%<sg%>%<fm%>: PronounCase ;
+LEXICON PPSecondSGInf
+%<prn%>%<pers%>%<p2%>%<sg%>%<infm%>: PronounCase ;
+LEXICON PPSecondSGFm
+%<prn%>%<pers%>%<p2%>%<sg%>%<fm%>: PronounCase ;
+LEXICON PPThirdSGDis
+%<prn%>%<pers%>%<p3%>%<sg%>%<dst%>: PronounCase ;
+LEXICON PPThirdSGProx
+%<prn%>%<pers%>%<p3%>%<sg%>%<prx%>: PronounCase ;
+
+LEXICON PPFirstPLStd
+%<prn%>%<pers%>%<p1%>%<pl%>%<std%>: PronounCase ;
+LEXICON PPFirstPLFm
+%<prn%>%<pers%>%<p1%>%<pl%>%<fm%>: PronounCase ;
+LEXICON PPSecondPLInf
+%<prn%>%<pers%>%<p2%>%<pl%>%<infm%>: PronounCase ;
+LEXICON PPSecondPLStd
+%<prn%>%<pers%>%<p2%>%<pl%>%<std%>: PronounCase ;
+LEXICON PPThirdPLDis
+%<prn%>%<pers%>%<p3%>%<pl%>%<dst%>: PronounCase ;
+LEXICON PPThirdPLProx
+%<prn%>%<pers%>%<p3%>%<pl%>%<prx%>: PronounCase ;
+
+
+LEXICON PronounCase
+%<dir%>: # ;
+
+!Demonstratives
+LEXICON DemProOne
+%<prn%>%<dem%>%<deg1%>%<sg%>: PronounCase ;
+LEXICON DemProTwo
+%<prn%>%<dem%>%<deg2%>%<sg%>: PronounCase ;
+LEXICON DemProThree
+%<prn%>%<dem%>%<deg3%>%<sg%>: PronounCase ;
+
+LEXICON DemProOnePL
+%<prn%>%<dem%>%<deg1%>%<pl%>: PronounCase ;
+LEXICON DemProTwoPL
+%<prn%>%<dem%>%<deg2%>%<pl%>: PronounCase ;
+LEXICON DemProThreePL
+%<prn%>%<dem%>%<deg3%>%<pl%>: PronounCase ;
+
+!!!!!!!!!!!!!!! LEXICON TIME !!!!!!!!!!!!!!!
+
+LEXICON HumanNounRoot
+މީހާ:މީހާ Noun-Human ; ! "person"
+ފުލުހުން:ފުލުހުން Noun-Human ; ! "police"
+ރެފްރީ:ރެފްރީ Noun-Human ; ! "referee"
+ރަދުން:ރަދުން Noun-Human ; ! "king"
+ޒުވާން:ޒުވާން Noun-Human ; ! "young person"
+މުދައްރިސް:މުދައްރިސް Noun-Human ; ! "teacher"
+ޑޮކްޓަރު:ޑޮކްޓަރު Noun-Human ; ! "doctor"
+މުސްލިމު:މުސްލިމު Noun-Human ; ! "Muslim"
+ކަކާ:ކަކާ Noun-Human ; ! "chef"
+ވެރިޔާ:ވެރިޔާ Noun-Human ; ! "leader"
+ކެންޑިޑޭޓް:ކެންޑިޑޭޓް Noun-Human ; ! "candidate"
+
+!Newly added word
+ވަގު:ވަގު Noun-Human ; ! "thief"
+ފިރިހެން:ފިރިހެން Noun-Human ; ! "male"
+އަންހެން:އަންހެން Noun-Human ; ! "female"
+
+ކުއްޖަކު%<n%>%<hum%>%<sg%>%<uns%>%<dir%>:ކުއްޖަކު # ; ! "girl"
+
+LEXICON KinshipRoot
+މަންމަ:މަންމަ Noun-Kinship ; ! "mother"
+ބައްޕަ:ބައްޕަ Noun-Kinship ; ! "father"
+ކޮއްކޮ:ކޮއްކޮ Noun-Kinship ; ! "younger sibling"
+
+!Newly added word
+ބޭބެ:ބޭބެ Noun-Kinship ; ! "older brother"
+ދައްތަ:ދައްތަ Noun-Kinship ; ! "older sister"
+ބޮޑުދައިތަ:ބޮޑުދައިތަ Noun-Kinship ; ! "aunt"
+ބޮޑުބޭބެ:ބޮޑުބޭބެ Noun-Kinship ; ! "uncle"
+މާމަ:މާމަ Noun-Kinship ; ! "grandmother"
+ކާފަ:ކާފަ Noun-Kinship ; ! "grandfather"
+އަނބިމީހާ:އަނބިމީހާ Noun-Kinship ; ! "wife"
+ފިރިމީހާ:ފިރިމީހާ Noun-Kinship ; ! "husband"
+
+
+LEXICON NonHumanRoot
+ކަކުނި:ކަކުނި Noun-NonHuman ; ! "crab"
+ރާއްޖެ:ރާއްޖެ Noun-NonHuman ; ! "country"
+ފޮތް:ފޮތް Noun-NonHuman ; ! "book"
+މާއްދާ:މާއްދާ Noun-NonHuman ; ! "article"
+ކަފަ:ކަފަ Noun-NonHuman ; ! "cotton"
+އާފަލު:އާފަލު Noun-NonHuman ; ! "apple"
+ފޮތް:ފޮތް Noun-NonHuman ; ! "book"
+ދޫނި:ދޫނި Noun-NonHuman ; ! "bird"
+ތަރި:ތަރި Noun-NonHuman ; ! "star"
+މަގު:މަގު Noun-NonHuman ; ! "street"
+ދޮންކެޔޮ:ދޮންކެޔޮ Noun-NonHuman ; ! "banana"
+ކަރާ:ކަރާ Noun-NonHuman ; !  "watermelon"
+ބަސް:ބަސް Noun-NonHuman ; ! "language"
+ބަދަލު:ބަދަލު Noun-NonHuman ; ! "change"
+ބޮއް:ބޮއް Noun-NonHuman ; ! "frog"
+ނަން:ނަން Noun-NonHuman ; ! "name"
+ބުޅާ:ބުޅާ Noun-NonHuman ; ! "cat"
+މެހި:މެހި Noun-NonHuman ; ! "fly"
+ކާށި:ކާށި Noun-NonHuman ; ! "coconut"
+މައްސަލަ:މައްސަލަ Noun-NonHuman; ! "problem"
+އަތް:އަތް Noun-NonHuman ; ! "arm"
+ރަށް:ރަށް Noun-NonHuman ; ! "island"
+ޤައުމު:ޤައުމު Noun-NonHuman ; ! "nation"
+ފާހަނަ:ފާހަނަ Noun-NonHuman ; ! "bathroom"
+އިންގިރޭސި:އިންގިރޭސި Noun-NonHuman ; ! "English"
+ދިވެހިބަސް:ދިވެހިބަސް Noun-NonHuman ; ! "Maldivian"
+މުބާރާތް:މުބާރާތް Noun-NonHuman ; ! "competition"
+ތަރައްގީ:ތަރައްގީ Noun-NonHuman ; ! "improvement"
+އާއިލާ:އާއިލާ Noun-NonHuman ; ! "family"
+އާމްދަނީ:އާމްދަނީ Noun-NonHuman ; ! "income"
+އިތުރުވުން:އިތުރުވުން Noun-NonHuman ; ! "surplus"
+އިސްލާޙް:އިސްލާޙް Noun-NonHuman ; ! "reform"
+ޑިމޮކްރެސީ:ޑިމޮކްރެސީ Noun-NonHuman ; ! "democracy"
+މަދްރަސާ:މަދްރަސާ Noun-NonHuman ; ! "school"
+ގެ:ގެ Noun-NonHuman ; ! "house"
+ދަނޑި:ދަނޑި Noun-NonHuman ; ! "pole"
+ބޮކި:ބޮކި Noun-NonHuman ; ! "bubble/lightbulb"
+ސަރަހައްދު:ސަރަހައްދު Noun-NonHuman ; ! "region"
+ސައިބޯނި:ސައިބޯނި Noun-NonHuman ; ! "soap"
+ގަޑި:ގަޑި Noun-NonHuman ; ! "hour/clock"
+އިރު:އިރު Noun-NonHuman ; ! "time"
+ރީތިކަން:ރީތިކަން Noun-NonHuman ; ! "beauty"
+ގޮތް:ގޮތް Noun-NonHuman ; ! "way"
+އަތުކުރީ:އަތުކުރީ Noun-NonHuman ; ! "wrist"
+ވާހަކަ:ވާހަކަ Noun-NonHuman ; ! "story"
+ޙައްޤު:ޙައްޤު Noun-NonHuman ; ! "right"
+
+!Newly added words
+މަސައްކަތް:މަސައްކަތް Noun-NonHuman ; ! "work"
+ކަން:ކަން Noun-NonHuman ; ! "action"
+ދީން:ދީން Noun-NonHuman ; ! "religion"
+ޖަލްސާ:ޖަލްސާ Noun-NonHuman ; ! "assembly"
+ދަތުރު:ދަތުރު Noun-NonHuman ; ! "journey"
+ބޯ:ބޯ Noun-NonHuman ; ! "head"
+ލޯ:ލޯ Noun-NonHuman ; ! "eye"
+ނޭފަތް:ނޭފަތް Noun-NonHuman ; ! "nose"
+މައްސަލަ:މައްސަލަ Noun-NonHuman ; ! "case"
+ސަރުކާރު:ސަރުކާރު Noun-NonHuman ; ! "government"
+ތަން:ތަން Noun-NonHuman ; ! "place"
+ގެރިބަކަރި:ގެރިބަކަރި Noun-NonHuman ; ! "livestock"
+ކަނޑިބަޑި:ކަނޑިބަޑި Noun-NonHuman ; ! "weapon"
+ފޭޑި:ފޭޑި Noun-NonHuman ; ! "skill"
+ސޫފި:ސޫފި Noun-NonHuman ; ! "insect"
+ދޫނި:ދޫނި Noun-NonHuman ; ! "bird"
+މަސް:މަސް Noun-NonHuman ; ! "fish" 
+މާ:މާ Noun-NonHuman ; ! "flower"
+ގަސް:ގަސް Noun-NonHuman ; ! "tree"
+މިން:މިން Noun-NonHuman ; ! "amount"
+ބަރުމިން:ބަރުމިން Noun-NonHuman ; ! "weight"
+އުސްމިން:އުސްމިން Noun-NonHuman ; ! "height"
+ހޫނުމިން:ހޫނުމިން Noun-NonHuman ; ! "temperature"
+ފެން:ފެން Noun-NonHuman ; ! "water"
+ހަރު:ހަރު Noun-NonHuman ; ! "shelf"
+ފެންގަނޑު:ފެންގަނޑު Noun-NonHuman ; ! "lake"
+ކުއްތާ:ކުއްތާ Noun-NonHuman ; ! "dog"
+އަސަރު:އަސަރު Noun-NonHuman ; ! "effect"
+ރިޕޯޓް:ރިޕޯޓް Noun-NonHuman ; ! "report"
+ވެލާ:ވެލާ Noun-NonHuman ; ! "sea turtle"
+ކުކުޅު:ކުކުޅު Noun-NonHuman ; ! "chicken"
+ސުވާލު:ސުވާލު Noun-NonHuman ; ! "question"
+
+ހޯމަ:ހޯމަ Noun-NonHuman ; ! "Monday"
+އަންގާރަ:އަންގާރަ Noun-NonHuman ; ! "Tuesday"
+ބުދަ:ބުދަ Noun-NonHuman ; ! "Wednesday"
+ބުރާސްފަތި:ބުރާސްފަތި Noun-NonHuman ; ! "Thursday"
+ހުކުރު:ހުކުރު Noun-NonHuman ; ! "Friday"
+ހޮނިހިރު:ހޮނިހިރު Noun-NonHuman ; ! "Saturday"
+އާދީއްތި:އާދީއްތި Noun-NonHuman ; ! "Sunday"
+ދުވަސް:ދުވަސް Noun-NonHuman ; ! "day"
+
+ދުނިޔެ:ދުނިޔެ Noun-NonHuman ; ! "earth"
+އަލިކަން:އަލިކަން Noun-NonHuman ; ! "light"
+ބިމުން:ބިމުން Noun-NonHuman ; ! "land"
+
+ރޫޙާއި%<n%>%<nhum%>%<sg%>%<def%>%<soc%>:ރޫޙާއި # ; ! "spirit"
+ދުވަސް%<n%>%<nhum%>%<sg%>%<def%>%<dir%>%+އެވެ%<mod%>:ދުވަހެވެ # ; ! "day"
+
+LEXICON BoatRoot
+ނާ:ނާ Noun-Boat ; ! "sailing ship"
+މަތިންދާ% ބޯޓު:މަތިންދާ% ބޯޓު Noun-Boat ; ! "airplane"
+ބޯޓު:ބޯޓު Noun-Boat ; ! "boat"
+
+LEXICON VerbRoot
+ހަދަ:ހަދަ Verb-TV-ActiveStem ; ! "make"
+ހަދަ:ހައްދަ Verb-TV-CausativeStem ; ! "cause to make"
+ހަދަ:ހެދެ Verb-TV-PassiveStem ; ! "is made"
+
+ކުރަ:ކުރަ Verb-TV-ActiveStem ; ! "do"
+ކުރަ:ކުރުވަ Verb-TV-CausativeStem ; ! "cause to do"
+ކުރަ:ކުރެވެ Verb-TV-PassiveStem ; ! "is done"
+
+ފަށަ:ފަށަ Verb-TV-ActiveStem ; ! "begin(something)"
+ފަށަ:ފައްޓަ Verb-TV-CausativeStem ; ! "cause to begin"
+ފަށަ:ފެށެ Verb-TV-PassiveStem ; ! "is begun"
+
+ބަލަ:ބަލަ Verb-TV-ActiveStem ; ! "look at"
+ބަލަ:ބަލުވަ Verb-TV-CausativeStem ; ! "cause to look"
+ބަލަ:ބެލެވެ Verb-TV-PassiveStem ; ! "is looked at"
+
+ކުޅެ:ކުޅެ Verb-IV-ActiveStem ; ! "play"
+ކުޅެ:ކުޅުވަ Verb-IV-CausativeStem ; ! "cause to play"
+ކުޅެ:ކުޅެވެ Verb-IV-PassiveStem ; ! "is played"
+
+ނަށަ:ނަށަ Verb-IV-ActiveStem ; ! "dance"
+
+ޖަހަ:ޖަހަ Verb-TV-ActiveStem ; ! "hit"
+
+ދައްކަ:ދައްކަ Verb-TV-ActiveStem ; ! "shows"
+
+ދެކެ:ދެކެ Verb-TV-ActiveStem ; ! "see"
+
+ފެތެ:ފެތެ Verb-IV-PassiveStem ; ! "sink"
+
+ނިމެ:ނިމެ Verb-IV-PassiveStem ; ! "end"
+
+ވާހަކަ% ދެކްކި%<v%>%<tv%>%<act%>%<pres%>%<p1%>%<opt%>:ވާހަކަ% ދެކްކި # ; ! "speak" 
+ޖެހޭ%<v%>%<tv%>%<act%>%<pprs%>:ޖެހޭ # ; ! "hit"
+އިތުރުވުން%<v%>%<iv%>%<act%>%<pres%>%<p3%>:އިތުރުވުން # ; ! "increase"
+ދުކޮހް%<v%>%<tv%>%<act%>%<pres%>%<p3%>%<imp%>:ދުކޮހް # ; ! "leave"
+ވާނީ%<v%>%<tv%>%<act%>%<fut%>%<pot%>:ވާނީ # ; ! "be"
+ވަނީ%<v%>%<tv%>%<act%>%<pres%>%<p3%>:ވަނީ # ; ! "be"
+ޖަހައި%<v%>%<tv%>%<act%>%<past%>%<p3%>:ޖަހައި # ; ! "strike"
+އޮތް%<v%>%<iv%>%<act%>%<past%>%<p3%>:އޮތް # ; ! "be lying"
+ހިމެނޭ%<v%>%<tv%>%<act%>%<pres%>%<p3%>:ހިމެނޭ # ; ! "include"
+
+
+ދައްކާ%<v%>%<iv%>%<caus%>%<pres%>%<p3%>:ދައްކާ # ; ! "show"
+ދައްކުވައިދޭ%<v%>%<tv%>%<act%>%<pres%>%<p3%>:ދައްކުވައިދޭ # ; ! "indicate"
+ދުކޮށްލާ%<v%>%<tv%>%<act%>%<pprs%>%+ފަ%<succ%>:ދުކޮށްލާފަ VerbClitics ; ! "release"
+އުފައްދައިފި%<v%>%<tv%>%<act%>%<perf%>%<p3%>:އުފައްދައިފި # ; ! "produce"
+
+
+LEXICON AdjRoot
+ތަފާތު:ތަފާތު AdjEnding ; ! "different"
+ބޮޑު:ބޮޑު AdjEnding ; ! "big"
+ހަމަ:ހަމަ AdjEnding ; ! "just"
+ފުރަތަމަ:ފުރަތަމަ AdjEnding ; ! "first"
+އެކަނި:އެކަނި AdjEnding ; ! "alone"
+ސާފު:ސާފު AdjEnding ; ! "clean"
+ހޭދަ:ހޭދަ AdjEnding ; ! "spending"
+ޒަމާނީ:ޒަމާނީ AdjEnding ; ! "modern"
+
+!newly added words
+ކުޑަ:ކުޑަ AdjEnding ; ! "small"
+މޮޅު:މޮޅު AdjEnding ; ! "excellent"
+ހޫނު:ހޫނު AdjEnding ; ! "hot"
+ބަރު:ބަރު AdjEnding ; ! "heavy"
+އުސް:އުސް AdjEnding ; ! "high"
+ރީތި:ރީތި AdjEnding ; ! "beautiful"
+ވަކި:ވަކި AdjEnding ; ! "separate"
+ބިރުކުޑަ:ބިރުކުޑަ AdjEnding ; ! "fearless"
+ދީންވެރި:ދީންވެރި AdjEnding ; ! "religious"
+ލަދުވެތި:ލަދުވެތި AdjEnding ; ! "shy"
+ބިރުވެރި:ބިރުވެރި AdjEnding ; ! "fearful"
+ބިރުވެތި:ބިރުވެތި AdjEnding ; ! "respectful"
+އަޅުވެތި:އަޅުވެތި AdjEnding ; ! "slavish"
+ރަހީމްވަންތަ:ރަހީމްވަންތަ AdjEnding ; ! "merciful"
+އެއްބައިވަންތަ:އެއްބައިވަންތަ AdjEnding ; ! "unified"
+ދަރުމަވަންތަ:ދަރުމަވަންތަ AdjEnding ; ! "righteous"
+އެހީތެރި:އެހީތެރި AdjEnding ; ! "helpful"
+ގަދަ:ގަދަ AdjEnding ; ! "strong"
+ހެޔޮ:ހެޔޮ AdjEnding ; ! "good"
+އަގުހެޔޮ:އަގުހެޔޮ AdjEnding ; ! "inexpensive"
+ހުސް:ހުސް AdjEnding ; ! "empty"
+ފިނި:ފިނި AdjEnding ; ! "cold"
+ގޯސް:ގޯސް AdjEnding ; ! "bad"
+ހުދު:ހުދު AdjEnding ; ! "white"
+ރަތް:ރަތް AdjEnding ; ! "red"
+ނޫ:ނޫ AdjEnding ; ! "blue"
+ފެހިކުލައިގެ:ފެހިކުލައިގެ AdjEnding ; ! "green"
+ކަޅު:ކަޅު AdjEnding ; ! "black"
+ކުރު:ކުރު AdjEnding ; ! "short"
+ވަގުތުން:ވަގުތުން AdjEnding ; ! "instant"
+ގަދީމީ:ގަދީމީ AdjEnding ; ! "ancient"
+ދިގު:ދިގު AdjEnding ; ! "long"
+ރަސްމީ:ރަސްމީ AdjEnding ; ! "official"
+އެކި:އެކި AdjEnding ; ! "various"
+ހުރި:ހުރި AdjEnding ; ! "existing"
+ހުރިހާ:ހުރިހާ AdjEnding ; ! "entire"
+
+ބޮޑު%<adj%>%+އެވެ%<mod%>:ބޮޑެވެ # ; ! "big"
+ދިގު%<adj%>%+އެވެ%<mod%>:ދިގެވެ # ; ! "long"
+
+LEXICON AdverbRoot
+މަދުން:މަދުން AdverbEnding ; ! "rarely"
+ކަށަވަރުން:ކަށަވަރުން AdverbEnding ; ! "certainly"
+ފަހުން:ފަހުން AdverbEnding ; ! "afterward"
+ކުރިން:ކުރިން AdverbEnding ; ! "before"
+މަތިން:މަތިން AdverbEnding ; ! "above"
+މަޑުމަޑުން:މަޑުމަޑުން AdverbEnding ; ! "slowly"
+ނުވަނީސް:ނުވަނީސް AdverbEnding ; ! "before"
+
+މިއަދު:މިއަދު AdverbEnding ; ! "today"
+މާދަމާ:މާދަމާ AdverbEnding ; ! "tomorrow"
+މާ:މާ AdverbEnding ; ! "much"
+އަދިވެސް:އަދިވެސް AdverbEnding ; ! "still"
+
+ބޮޑަށް:ބޮޑަށް AdverbEnding ; ! "greatly"
+އަވަހަށް:އަވަހަށް AdverbEnding ; ! "quickly"
+މައްޗަށް:މައްޗަށް AdverbEnding ; ! "upward"
+
+ޚާއްސަކޮށް:ޚާއްސަކޮށް AdverbEnding ; ! "especially"
+އާންމުކޮށް:އާންމުކޮށް AdverbEnding ; ! "generally"
+ކުޑަކޮށް:ކުޑަކޮށް AdverbEnding ; ! "a little"
+
+ވަރަށް:ވަރަށް AdverbEnding ; ! "very"
+ދެން:ދެން AdverbEnding ; ! "then"
+އެހެންނަމަވެސް:އެހެންނަމަވެސް AdverbEnding ; ! "nevertheless"
+ކޮންމެހެން:ކޮންމެހެން AdverbEnding ; ! "somehow"
+އެހެންވީރު:އެހެންވީރު AdverbEnding ; ! "so"
+
+އާނ%<ij%>:އާނ # ; ! "yes" 
+
+LEXICON PPRoot
+މަ:މަ PPFirstSGInf ; ! "I - informal"
+އަހަރެން:އަހަރެން PPFirstSGStd ; ! "I - standard"
+އަޅުގަނޑު:އަޅުގަނޑު PPFirstSGFm ; ! "I - formal"
+ކަލޭ:ކަލޭ PPSecondSGInf ; ! "you - informal"
+ތިބޭފުޅާ:ތިބޭފުޅާ PPSecondSGFm ; ! "you - formal"
+އޭނާ:އޭނާ PPThirdSGDis ; ! "he/she - distal"
+މީނާ:މީނާ PPThirdSGProx ; ! "he/she - proximal"
+
+އަހަރެމެން:އަހަރެމެން PPFirstPLStd ; ! "we - standard"
+އަޅުގަނޑުމެން:އަޅުގަނޑުމެން PPFirstPLFm ; ! "we - formal"
+ކަލޭމެން:ކަލޭމެން PPSecondPLInf ; ! "you - informal"
+ތިމިހުން:ތިމިހުން PPSecondPLStd ; ! "you - standard"
+އެމީހުން:އެމީހުން PPThirdPLDis ; ! "they - distal"
+މިމީހުން:މިމީހުން PPThirdPLProx ; ! "they - proximal"
+
+އޭގެ%<prn%>%<pers%>%<p3%>%<sg%>%<pos%>:އޭގެ # ; ! "its"  
+އެންމެން%<prn%>%<sg%>:އެންމެން # ; ! "everyone"
+ބަޔަކު%<prn%>%<sg%>:ބަޔަކު # ; ! "someone"
+ހުރިހާ%<prn%>%<sp%>:ހުރިހާ # ; ! "all"
+
+LEXICON QuestionRoot
+ކާކު:ކާކު Interrogative ; ! "who"
+ކީކް:ކީކް Interrogative ; ! "what"
+ކީކޭ:ކީކޭ Interrogative ; ! "what"
+ކޮން:ކޮން Interrogative ; ! "which"
+ކޮންތާކު:ކޮންތާކު Interrogative ; ! "where"
+ކޮބާ:ކޮބާ Interrogative ; ! "where"
+ކީއްވެ:ކީއްވެ Interrogative ; ! "why"
+ކިހިނެކް:ކިހިނެކް Interrogative ; ! "how"
+ކޮން% އިރަކު:ކޮން% އިރަކު Interrogative ; ! "when"
+ކޮންއިރަކު:ކޮންއިރަކު Interrogative ; ! "when"
+ކިހާވަރަކަހް:ކިހާވަރަކަހް Interrogative ; ! "How much"
+ކިތައް:ކިތައް Interrogative ; ! "how many"
+ކޮންކަހަލަ:ކޮންކަހަލަ Interrogative ; ! "what kind"
+ކޯއްޗެއް:ކޯއްޗެއް Interrogative ; ! "which thing"
+ކޯންޗެއް:ކޯންޗެއް Interrogative ; ! "which thing"
+
+LEXICON Determiners
+ކޮންމެ%<det%>%<qnt%>%<sp%>:ކޮންމެ # ; ! "some, any" - positive polarity
+އެއްވެސް%<det%>%<ind%>%<sp%>:އެއްވެސް # ; ! "any" - negative polarity
+މިފަދަ%<det%>%<dem%>%<deg1%>:މިފަދަ # ; ! "this type"
+އެފަދަ%<det%>%<ind%>%<sp%>:އެފަދަ # ; ! "such"
+އެންމެ%<det%>%<sg%>:އެންމެ # ; ! "a single/the most"
+
+LEXICON DemonRoot
+މީތި:މީތި DemProOne ; ! "this/it"
+މި:މި DemProOne ; ! "this/these"
+ތީތި:ތީތި DemProTwo ; ! "that/it"
+ތި:ތި DemProTwo ; ! "that/those"
+ތިޔަ:ތިޔަ DemProTwo ; ! "that/those"
+އޭތި:އޭތި DemProThree ; ! "that (over there)/it"
+އެ:އެ DemProThree ; ! "that/those (over there)"
+މިއެއްޗެހި:މިއެއްޗެހި DemProOnePL ; ! "these/they"
+ތިއެއްޗެހި:ތިއެއްޗެހި DemProTwoPL ; ! "those/they"
+އެއެއްޗެހި:އެއެއްޗެހި DemProThreePL ; ! "those (over there)/they"
+
+LEXICON ConjRoot
+އަދި:އަދި ConjEnding ; ! "and"
+ނުވަތަ:ނުވަތަ ConjEnding ; ! "or"
+އެކަމަކު:އެކަމަކު ConjEnding ; ! "but"
+
+LEXICON ModalWords
+ލާ%<mod%>:ލާ # ; 
+އަކީ%<mod%>:އަކީ # ; ! "is"
+އެވެ%<mod%>:އެވެ # ; ! sentence-ending particle
+ވެސް%<mod%>:ވެސް # ; ! emphasis particle
+
+LEXICON Proper-Nouns
+އަލީ:އަލީ PropNouns ; ! "Ali"
+އަލް% އަގްސާ% މިސްކިތް:އަލް% އަގްސާ% މިސްކިތް PropNouns ; ! "Al-Aqsa Mosque"
+ފަލަސްތީނުގެ:ފަލަސްތީނުގެ PropNouns ; ! "Palestinian"
+ނިހާނު:ނިހާނު PropNouns ; ! "Nihanu"
+
+!Newly added words
+މާލެ:މާލެ PropNouns ; ! "Male"
+އިބްރާހިމް:އިބްރާހިމް PropNouns ; ! "Ibrahim"
+މުޙައްމަދު:މުޙައްމަދު PropNouns ; ! "Mohamed"
+އާދަމް:އާދަމް PropNouns ; ! "Adam"
+އަހްމަދު:އަހްމަދު PropNouns ; ! "Ahmed"
+އައްޑޫ:އައްޑޫ PropNouns ; ! "Addu"
+
+ޔޫސުފުގެފާނު:ޔޫސުފުގެފާނު PropNouns ; ! "Joseph"
+އިބްރާހީމްގެފާނު:އިބްރާހީމްގެފާނު PropNouns ; ! "Abraham"
+މާތްﷲ%<np%>%<al%>%<sg%>:މާތްﷲ # ; ! "God"
+
+އެކަލާނގެ%<n%>%<hum%>%<sg%>%<def%>%<dir%>%<hhon%>:އެކަލާނގެ # ; ! "that god" (high hon)
+
+LEXICON Postpositions
+ޚިލާފު%<post%>:ޚިލާފު # ; ! "against" 
+
+LEXICON Numbers
+%<num%>: # ; 
+%<num%>%<ord%>:ވަނަ # ; 
+
+LEXICON NumbersRoot
+އެއް:އެއް Numbers ; ! "one" prefix
+ދެ:ދެ Numbers ; ! "two" prefix
+ތިން:ތިން Numbers ; ! "three" prefix
+ހަތަރު:ހަތަރު Numbers ; ! "four" prefix
+ފަސް:ފަސް Numbers ; ! "five" prefix
+ހަ:ހަ Numbers ; ! "six" prefix
+ހަތް:ހަތް Numbers ; ! "seven" prefix
+އަށް:އަށް Numbers ; ! "eight" prefix
+ނުވަ:ނުވަ Numbers ; ! "nine" prefix
+ދިހަ:ދިހަ Numbers ; ! "ten" prefix
+
+އެކެއް:އެކެއް Numbers ; ! "one"
+ދޭއް:ދޭއް Numbers ; ! "two"
+ތިނެއް:ތިނެއް Numbers ; ! "three"
+ހަތަރެއް:ހަތަރެއް Numbers ; ! "four"
+ފަހެއް:ފަހެއް Numbers ; ! "five"
+ހައެއް:ހައެއް Numbers ; ! "six"
+ހަތެއް:ހަތެއް Numbers ; ! "seven"
+އަށެއް:އަށެއް Numbers ; ! "eight"
+ނުވައެއް:ނުވައެއް Numbers ; ! "nine"
+ދިހައެއް:ދިހައެއް Numbers ; ! "ten"
+އެގާރަ:އެގާރަ Numbers ; ! "eleven"
+ބާރަ:ބާރަ Numbers ; ! "twelve"
+ތޭރަ:ތޭރަ Numbers ; ! "thirteen"
+ސާދަ:ސާދަ Numbers ; ! "fourteen"
+ފަނަރަ:ފަނަރަ Numbers ; ! "fifteen"
+ސޯޅަ:ސޯޅަ Numbers ; ! "sixteen"
+ސަތާރަ:ސަތާރަ Numbers ; ! "seventeen"
+އަށާރަ:އަށާރަ Numbers ; ! "eighteen"
+ނަވާރަ:ނަވާރަ Numbers ; ! "nineteen"
+ވިހި:ވިހި Numbers ; ! "twenty"
+ތިރީސް:ތިރީސް Numbers ; ! "thirty"
+ސާޅީސް:ސާޅީސް Numbers ; ! "forty"
+ފަންސާސް:ފަންސާސް Numbers ; ! "fifty"
+ފަސްދޮޅަސް:ފަސްދޮޅަސް Numbers ; ! "sixty"
+ހަތްދިހަ:ހަތްދިހަ Numbers ; ! "seventy"
+އައްޑިހަ:އައްޑިހަ Numbers ; ! "eighty"
+ނުވަދިހަ:ނުވަދިހަ Numbers ; ! "ninty"
+ސަތޭކަ:ސަތޭކަ Numbers ; ! "one hundred"
+ދުއިސައްތަ:ދުއިސައްތަ Numbers ; ! "two hundred"
+ތިންސަތޭކަ:ތިންސަތޭކަ Numbers ; ! "three hundred"
+އެއްހާސް:އެއްހާސް Numbers ; ! "one thousand"
+އެއްލައްކަ:އެއްލައްކަ Numbers ; ! "one hundred thousand"
+
+LEXICON Digits
+DIGITLEX ; ! Use/Circ
+
+LEXICON LOOP
+%,:%, DIGITLEX ;
+%.:%. DIGITLEX ;
+      DIGITLEX ;
+%<num%>: # ; 
+%<num%>%<ord%>:% ވަނަ # ;
+
+LEXICON DIGITLEX
+%0:%0 LOOP ;
+1:1 LOOP ;
+2:2 LOOP ;
+3:3 LOOP ;
+4:4 LOOP ;
+5:5 LOOP ;
+6:6 LOOP ;
+7:7 LOOP ;
+8:8 LOOP ;
+9:9 LOOP ;
+
+LEXICON Punctuation
+.%<sent%>:. # ;
+..%<sent%>:.. # ;
+...%<sent%>:... # ;
+%؛%<sent%>:%؛ # ;
+%:%<sent%>:%: # ;
+%!%<sent%>:%! # ;
+%؟%<sent%>:%؟ # ;
+%،%<cm%>:%، # ;
+%'%<apos%>:%' # ;
+%"%<quot%>:%" # ;
+%-%<guio%>:%- # ;
+%—%<guio%>:%— # ;
+%(%<lpar%>:%( # ;
+%]%<rpar%>:%] # ;
+%[%<lpar%>:%[ # ;
+%)%<rpar%>:%) # ;
+%{%<lpar%>:%{ # ;
+%}%<rpar%>:%} # ;
+\%<sent%>:\ # ;
+/%<sent%>:/ # ;
+
+
+
+
+
+
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
+! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
+! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! https://github.com/hfst/
+! http://www.cis.upenn.edu/~cis639/docs/lexc.html
+! http://wiki.apertium.org/wiki/Hfst

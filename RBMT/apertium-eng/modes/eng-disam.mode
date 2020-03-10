@@ -1,0 +1,5 @@
+
+  
+    lt-proc -w '/home/xluo1/ling73/apertium-eng/eng.automorf.bin' | cg-conv -a -l| vislcg3 --trace -g '/home/xluo1/ling73/apertium-eng/apertium-eng.eng.rlx' 
+  
+

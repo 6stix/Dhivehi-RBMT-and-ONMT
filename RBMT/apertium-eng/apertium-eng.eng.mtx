@@ -1,0 +1,332 @@
+<?xml version="1.0" ?>
+<!--
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<!--
+Feature templates copied from the spaCy part of speech tagger. From here:
+https://spacy.io/blog/part-of-speech-pos-tagger-in-python#features-and-pre-processing
+-->
+<metatag>
+  <coarse-tags tag="apertium-eng.eng.tsx"/>
+  <defns>
+    <def-macro as="flattags_0">
+      <join>
+        <for-each as="wordoid">
+          <ex-wordoids>
+            <tokaddr />
+          </ex-wordoids>
+          <join>
+            <ex-tags>
+              <var name="wordoid" />
+            </ex-tags>
+          </join>
+        </for-each>
+      </join>
+    </def-macro>
+    <def-macro as="flattags_m1">
+      <join>
+        <for-each as="wordoid">
+          <ex-wordoids>
+            <add>
+              <tokaddr />
+              <int val="-1" />
+            </add>
+          </ex-wordoids>
+          <join>
+            <ex-tags>
+              <var name="wordoid" />
+            </ex-tags>
+          </join>
+        </for-each>
+      </join>
+    </def-macro>
+    <def-macro as="flattags_m2">
+      <join>
+        <for-each as="wordoid">
+          <ex-wordoids>
+            <add>
+              <tokaddr />
+              <int val="-2" />
+            </add>
+          </ex-wordoids>
+          <join>
+            <ex-tags>
+              <var name="wordoid" />
+            </ex-tags>
+          </join>
+        </for-each>
+      </join>
+    </def-macro>
+    <def-macro as="surf_0_s3">
+      <slice start="-3">
+        <ex-surf>
+          <tokaddr />
+        </ex-surf>
+      </slice>
+    </def-macro>
+    <def-macro as="surf_0">
+      <ex-surf>
+        <tokaddr />
+      </ex-surf>
+    </def-macro>
+    <def-macro as="surf_m1">
+      <ex-surf>
+        <add>
+          <tokaddr />
+          <int val="-1" />
+        </add>
+      </ex-surf>
+    </def-macro>
+    <def-macro as="surf_m1_s3">
+      <slice start="-3">
+        <ex-surf>
+          <add>
+            <tokaddr />
+            <int val="-1" />
+          </add>
+        </ex-surf>
+      </slice>
+    </def-macro>
+    <def-macro as="surf_m2">
+      <ex-surf>
+        <add>
+          <tokaddr />
+          <int val="-1" />
+        </add>
+      </ex-surf>
+    </def-macro>
+    <def-macro as="surf_p1">
+      <ex-surf>
+        <add>
+          <tokaddr />
+          <int val="1" />
+        </add>
+      </ex-surf>
+    </def-macro>
+    <def-macro as="surf_p1_s3">
+      <slice start="-3">
+        <ex-surf>
+          <add>
+            <tokaddr />
+            <int val="1" />
+          </add>
+        </ex-surf>
+      </slice>
+    </def-macro>
+    <def-macro as="surf_p2">
+      <ex-surf>
+        <add>
+          <tokaddr />
+          <int val="2" />
+        </add>
+      </ex-surf>
+    </def-macro>
+    <def-macro as="lemma_0">
+      <ex-lemma>
+        <ex-wordoid>
+          <wrdaddr />
+        </ex-wordoid>
+      </ex-lemma>
+    </def-macro>
+    <def-macro as="suffix_1_0">
+      <slice start="-1">
+        <ex-lemma>
+          <ex-wordoid>
+            <wrdaddr />
+          </ex-wordoid>
+        </ex-lemma>
+      </slice>
+    </def-macro>
+    <def-macro as="suffix_3_0">
+      <slice start="-3">
+        <ex-lemma>
+          <ex-wordoid>
+            <wrdaddr />
+          </ex-wordoid>
+        </ex-lemma>
+      </slice>
+    </def-macro>
+    <def-macro as="tokaddr_m2">
+      <add>
+        <tokaddr />
+        <int val="-2" />
+      </add>
+    </def-macro>
+    <def-macro as="tokaddr_m1">
+      <add>
+        <tokaddr />
+        <int val="-1" />
+      </add>
+    </def-macro>
+    <def-macro as="tok_coarsetags" args="addr">
+      <join>
+        <for-each as="wordoid">
+          <ex-wordoids>
+            <var name="addr" />
+          </ex-wordoids>
+          <ex-coarse>
+            <var name="wordoid" />
+          </ex-coarse>
+        </for-each>
+      </join>
+    </def-macro>
+  </defns>
+  <global-pred>
+    <eq>
+      <wrdidx />
+      <int val="0" />
+    </eq>
+  </global-pred>
+  <feats>
+    <!-- add('bias') # This acts sort of like a prior -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+    </feat>
+    <!-- add('i suffix', word[-3:]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="suffix_3_0"></macro>
+      </out>
+    </feat>
+    <!-- add('i pref1', word[0]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="suffix_1_0"></macro>
+      </out>
+    </feat>
+    <!-- add('i-1 tag', prev) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="tok_coarsetags">
+          <macro name="tokaddr_m1"></macro>
+        </macro>
+      </out>
+    </feat>
+    <!-- add('i-2 tag', prev2) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="tok_coarsetags">
+          <macro name="tokaddr_m2"></macro>
+        </macro>
+      </out>
+    </feat>
+    <!-- add('i-1 tag+i-2 tag', prev, prev2) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="tok_coarsetags">
+          <macro name="tokaddr_m1"></macro>
+        </macro>
+      </out>
+      <out>
+        <macro name="tok_coarsetags">
+          <macro name="tokaddr_m2"></macro>
+        </macro>
+      </out>
+    </feat>
+    <!-- add('i word', context[i]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="surf_0"></macro>
+      </out>
+    </feat>
+    <!-- add('i-1 tag+i word', prev, context[i]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="tok_coarsetags">
+          <macro name="tokaddr_m1"></macro>
+        </macro>
+      </out>
+      <out>
+        <macro name="surf_0"></macro>
+      </out>
+    </feat>
+    <!-- add('i-1 word', context[i-1]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="surf_m1"></macro>
+      </out>
+    </feat>
+    <!-- add('i-1 suffix', context[i-1][-3:]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="surf_m1_s3"></macro>
+      </out>
+    </feat>
+    <!-- add('i-2 word', context[i-2]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="surf_m2"></macro>
+      </out>
+    </feat>
+    <!-- add('i+1 word', context[i+1]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="surf_p1"></macro>
+      </out>
+    </feat>
+    <!-- add('i+1 suffix', context[i+1][-3:]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="surf_p1_s3"></macro>
+      </out>
+    </feat>
+    <!-- add('i+2 word', context[i+2]) -->
+    <feat>
+      <out>
+        <macro name="tok_coarsetags"><tokaddr /></macro>
+      </out>
+      <out>
+        <macro name="surf_p2"></macro>
+      </out>
+    </feat>
+  </feats>
+</metatag>

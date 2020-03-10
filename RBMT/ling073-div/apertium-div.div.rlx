@@ -1,0 +1,20 @@
+# Firstly, we need to define what tags should be considered sentence delimiters. For this example, only full stop is set as delimiter.
+DELIMITERS = "<.>" ;
+
+# We can define sets for common tag clusters
+
+SECTION
+# If the word is after a noun, remove the noun reading
+REMOVE (n) IF (-1 (n)) ;
+
+# If the word is after an adjective, remove the verb reading
+REMOVE (v) IF (-1 (adj)) ;
+
+# Resources:
+# https://wikis.swarthmore.edu/ling073/Dhivehi/Disambiguation
+# http://visl.sdu.dk/cg3.html
+# http://groups.google.com/group/constraint-grammar
+# http://kevindonnelly.org.uk/2010/05/constraint-grammar-tutorial/
+# http://wiki.apertium.org/wiki/Constraint_Grammar
+# http://wiki.apertium.org/wiki/Apertium_and_Constraint_Grammar
+

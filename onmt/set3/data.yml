@@ -1,0 +1,9 @@
+model_dir: /run/
+
+data:
+  train_features_file: div_train.txt
+  train_labels_file: eng_train.txt
+  eval_features_file: div_val.txt
+  eval_labels_file: eng_val.txt
+  source_words_vocabulary: div_vocab.txt
+  target_words_vocabulary: eng_vocab.txt

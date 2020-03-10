@@ -1,0 +1,4 @@
+
+      
+    hfst-strings2fst -S| hfst-compose-intersect '/home/xluo1/ling73/ling073-div/.deps/div.twol.hfst' | hfst-fst2strings
+  

@@ -1,0 +1,28 @@
+Test file: 'div_test_predictions.txt'
+Reference file 'eng_test.txt'
+
+Statistics about input files
+-------------------------------------------------------
+Number of words in reference: 12211
+Number of words in test: 10629
+Number of unknown words (marked with a star) in test: 
+Percentage of unknown words: 0.00 %
+
+Results when removing unknown-word marks (stars)
+-------------------------------------------------------
+Edit distance: 10766
+Word error rate (WER): 88.17 %
+Number of position-independent correct words: 8301
+Position-independent word error rate (PER): 32.02 %
+
+Results when unknown-word marks (stars) are not removed
+-------------------------------------------------------
+Edit distance: 10766
+Word Error Rate (WER): 88.17 %
+Number of position-independent correct words: 8301
+Position-independent word error rate (PER): 32.02 %
+
+Statistics about the translation of unknown words
+-------------------------------------------------------
+Number of unknown words which were free rides: 0
+Percentage of unknown words that were free rides: 0%

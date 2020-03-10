@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+   <!-- Define the alphabet below. -->
+  <alphabet>aAáÁăảạÆbBcCčdDÐeEéèễệfFgGhHiIíjJkKlLmMnNoOóöớpPqQrRsSšştTŢuUúüưvVwWxXyYzZ</alphabet>
+
+  <sdefs>
+    <!-- Define symbol definitions within <sdef> here. -->
+    <sdef n="n"               c="Noun"/>
+    <sdef n="nhum"            c="NonHuman"/>
+    <sdef n="hum"             c="Human"/>
+    <sdef n="np"              c="Proper noun"/>
+    <sdef n="v"               c="Verb"/>
+    <sdef n="vblex"           c="Verb, lexical"/>
+    <sdef n="vbmod"           c="Modal verb"/>
+    <sdef n="vaux"            c="Auxiliary verb"/>
+    <sdef n="vbser"           c="'To be' verb"/>
+    <sdef n="vbhaver"         c="'To have' verb"/>
+    <sdef n="cnjsub"          c="Subordinating conjunction"/>
+    <sdef n="cnjcoo"          c="Co-ordinating conjunction"/>
+    <sdef n="cnjadv"          c="Adverbial conjunction"/>
+    <sdef n="pr"              c="Preposition"/>
+    <sdef n="adv"             c="Adverb"/>
+    <sdef n="ij"              c="Interjection"/>
+    <sdef n="adj"             c="Adjective"/>
+    <sdef n="prn"             c="Pronoun"/>
+    <sdef n="post"            c="Postposition"/>
+
+    <sdef n="attr"            c="Attributive"/>
+    <sdef n="top"             c="Toponym"/>
+    <sdef n="ant"             c="Anthroponym"/>
+    <sdef n="cog"             c="Cognomen"/>
+    <sdef n="org"             c="Organisation"/>
+    <sdef n="al"              c="Altres / misc proper nouns"/>
+
+    <sdef n="pers"            c="Personal pronoun"/>
+    <sdef n="ref"             c="Reflexive pronoun"/>
+    <sdef n="res"             c="Reciprocal pronoun"/>
+
+    <sdef n="det"             c="Determiner"/>
+    <sdef n="pos"             c="Possessive"/>
+
+    <sdef n="p1"              c="1st person"/>
+    <sdef n="p2"              c="2nd person"/>
+    <sdef n="p3"              c="3rd person"/>
+
+    <sdef n="nt"              c="Neuter"/>
+    <sdef n="ut"              c="Utrum"/>
+    <sdef n="f"               c="Feminine"/>
+    <sdef n="m"               c="Masculine"/>
+    <sdef n="un"              c="No gender"/>
+
+    <sdef n="sg"              c="Singular"/>
+    <sdef n="du"              c="Dual"/>
+    <sdef n="pl"              c="Plural"/>
+    <sdef n="sp"              c="Singular / plural"/>
+
+    <sdef n="ind"             c="Indefinite"/>
+    <sdef n="def"             c="Definite"/>
+    <sdef n="mod"             c="Modal words"/>
+
+    <sdef n="nom"             c="Nominative"/>
+    <sdef n="acc"             c="Accusative"/>
+    <sdef n="gen"             c="Genitive"/>
+
+    <sdef n="dem"             c="Demonstrative"/>
+    <sdef n="itg"             c="Question word / interrogative"/>
+    <sdef n="qnt"             c="Quantifier"/>
+    <sdef n="neg"             c="Negative"/>
+    <sdef n="emph"            c="Emphatic"/>
+
+    <sdef n="inf"             c="Infinitive"/>
+    <sdef n="pres"            c="Present"/>
+    <sdef n="imp"             c="Imperative"/>
+    <sdef n="pret"            c="Preterite"/>
+    <sdef n="pp"              c="Perfect participle"/>
+    <sdef n="pprs"            c="Present participle"/>
+    <sdef n="pasv"            c="Passive"/>
+    <sdef n="actv"            c="Active voice"/>
+
+    <sdef n="cont"            c="Continuous"/>
+    <sdef n="succ"            c="Successive"/>
+
+    <sdef n="sint"            c="Synthetic (of adjectives)"/>
+    <sdef n="pst"             c="Positive"/>
+    <sdef n="comp"            c="Comparative"/>
+    <sdef n="sup"             c="Superlative"/>
+
+    <sdef n="ord"             c="Ordinal"/>
+    <sdef n="acr"             c="Acronym"/>
+    <sdef n="unc"             c="Uncountable"/>
+
+    <sdef n="num"             c="Numeral"/>
+    <sdef n="sent"            c="Sentence end"/>
+    <sdef n="cm"              c="Comma"/>
+    <sdef n="apos"            c="Apostrophe"/>
+    <sdef n="guio"            c="Dash"/>
+    <sdef n="lpar"            c="Left parenthesis"/>
+    <sdef n="rpar"            c="Right parenthesis"/>
+    <sdef n="lquot"           c="Left quote"/>
+    <sdef n="rquot"           c="Right quote"/>
+
+    <sdef n="compound-only-L" c="May only be the left-side of a compound"/>
+    <sdef n="compound-R"      c="May be the right-side of a compound, or a full word"/>
+  </sdefs>
+
+   <section id="main" type="standard">
+      <!-- Define entries within <e> here. -->
+      <!-- from lexicon HumanNounRoot -->
+      <e><p><l>މީހާ<s n="n"/><s n="hum"/></l><r>person<s n="n"/></r></p></e>
+      <e><p><l>ފުލުހުން<s n="n"/><s n="hum"/></l><r>police<s n="n"/></r></p></e>
+      <e><p><l>ރެފްރީ<s n="n"/><s n="hum"/></l><r>referee<s n="n"/></r></p></e>
+      <e><p><l>ރަދުން<s n="n"/><s n="hum"/></l><r>king<s n="n"/></r></p></e>
+      <e><p><l>ޒުވާން<s n="n"/><s n="hum"/></l><r>young<b/>person<s n="n"/></r></p></e>
+      <e><p><l>މުދައްރިސް<s n="n"/><s n="hum"/></l><r>teacher<s n="n"/></r></p></e>
+      <e><p><l>ޑޮކްޓަރު<s n="n"/><s n="hum"/></l><r>doctor<s n="n"/></r></p></e>
+      <e><p><l>މުސްލިމު<s n="n"/><s n="hum"/></l><r>Muslim<s n="n"/></r></p></e>
+      <e><p><l>ކަކާ<s n="n"/><s n="hum"/></l><r>chef<s n="n"/></r></p></e>
+      <e><p><l>ވެރިޔާ<s n="n"/><s n="hum"/></l><r>leader<s n="n"/></r></p></e>
+      <e><p><l>ވަގު<s n="n"/><s n="hum"/></l><r>thief<s n="n"/></r></p></e>
+      <e><p><l>ފިރިހެން<s n="n"/><s n="hum"/></l><r>male<s n="n"/></r></p></e>
+      <e><p><l>އަންހެން<s n="n"/><s n="hum"/></l><r>female<s n="n"/></r></p></e>
+      <e><p><l>ކުއްޖަކު<s n="n"/><s n="hum"/></l><r>girl<s n="n"/></r></p></e>
+      <e><p><l>ކެންޑިޑޭޓް<s n="n"/><s n="hum"/></l><r>candidate<s n="n"/></r></p></e>
+
+      <!-- from lexicon KinshipRoot -->
+      <e><p><l>މަންމަ<s n="n"/><s n="hum"/></l><r>mother<s n="n"/></r></p></e>
+      <e><p><l>ބައްޕަ<s n="n"/><s n="hum"/></l><r>father<s n="n"/></r></p></e>
+      <e><p><l>ކޮއްކޮ<s n="n"/><s n="hum"/></l><r>younger<b/>sibling<s n="n"/></r></p></e>
+      <e><p><l>ބޭބެ<s n="n"/><s n="hum"/></l><r>older<b/>brother<s n="n"/></r></p></e>
+      <e><p><l>ދައްތަ<s n="n"/><s n="hum"/></l><r>older<b/>sister<s n="n"/></r></p></e>
+      <e><p><l>ބޮޑުދައިތަ<s n="n"/><s n="hum"/></l><r>aunt<s n="n"/></r></p></e>
+      <e><p><l>ބޮޑުބޭބެ<s n="n"/><s n="hum"/></l><r>uncle<s n="n"/></r></p></e>
+      <e><p><l>މާމަ<s n="n"/><s n="hum"/></l><r>grandmother<s n="n"/></r></p></e>
+      <e><p><l>ކާފަ<s n="n"/><s n="hum"/></l><r>grandfather<s n="n"/></r></p></e>
+      <e><p><l>އަނބިމީހާ<s n="n"/><s n="hum"/></l><r>wife<s n="n"/></r></p></e>
+      <e><p><l>ފިރިމީހާ<s n="n"/><s n="hum"/></l><r>husband<s n="n"/></r></p></e>
+
+      <!-- from lexicon NonHumanRoot -->
+      <e><p><l>ކަކުނި<s n="n"/><s n="nhum"/></l><r>crab<s n="n"/></r></p></e>
+      <e><p><l>ރާއްޖެ<s n="n"/><s n="nhum"/></l><r>country<s n="n"/></r></p></e>
+      <e><p><l>ފޮތް<s n="n"/><s n="nhum"/></l><r>book<s n="n"/></r></p></e>
+      <e><p><l>މާއްދާ<s n="n"/><s n="nhum"/></l><r>article<s n="n"/></r></p></e>
+      <e><p><l>ކަފަ<s n="n"/><s n="nhum"/></l><r>cotton<s n="n"/></r></p></e>
+      <e><p><l>އާފަލު<s n="n"/><s n="nhum"/></l><r>apple<s n="n"/></r></p></e>
+      <e><p><l>ފޮތް<s n="n"/><s n="nhum"/></l><r>book<s n="n"/></r></p></e>
+      <e><p><l>ދޫނި<s n="n"/><s n="nhum"/></l><r>bird<s n="n"/></r></p></e>
+      <e><p><l>ތަރި<s n="n"/><s n="nhum"/></l><r>star<s n="n"/></r></p></e>
+      <e><p><l>މަގު<s n="n"/><s n="nhum"/></l><r>street<s n="n"/></r></p></e>
+      <e><p><l>ދޮންކެޔޮ<s n="n"/><s n="nhum"/></l><r>banana<s n="n"/></r></p></e>
+      <e><p><l>ކަރާ<s n="n"/><s n="nhum"/></l><r>watermelon<s n="n"/></r></p></e>
+      <e><p><l>ބަސް<s n="n"/><s n="nhum"/></l><r>language<s n="n"/></r></p></e>
+      <e><p><l>ބަދަލު<s n="n"/><s n="nhum"/></l><r>change<s n="n"/></r></p></e>
+      <e><p><l>ބޮއް<s n="n"/><s n="nhum"/></l><r>frog<s n="n"/></r></p></e>
+      <e><p><l>ނަން<s n="n"/><s n="nhum"/></l><r>name<s n="n"/></r></p></e>
+      <e><p><l>ބަދަލު<s n="n"/><s n="nhum"/></l><r>change<s n="n"/></r></p></e>
+      <e><p><l>ބުޅާ<s n="n"/><s n="nhum"/></l><r>cat<s n="n"/></r></p></e>
+      <e><p><l>މެހި<s n="n"/><s n="nhum"/></l><r>fly<s n="n"/></r></p></e>
+      <e><p><l>ކާށި<s n="n"/><s n="nhum"/></l><r>coconut<s n="n"/></r></p></e>
+      <e><p><l>މައްސަލަ<s n="n"/><s n="nhum"/></l><r>problem<s n="n"/></r></p></e>
+      <e><p><l>އަތް<s n="n"/><s n="nhum"/></l><r>arm<s n="n"/></r></p></e>
+      <e><p><l>ރަށް<s n="n"/><s n="nhum"/></l><r>island<s n="n"/></r></p></e>
+      <e><p><l>ޤައުމު<s n="n"/><s n="nhum"/></l><r>nation<s n="n"/></r></p></e>
+      <e><p><l>ފާހަނަ<s n="n"/><s n="nhum"/></l><r>bathroom<s n="n"/></r></p></e>
+      <e><p><l>އިންގިރޭސި<s n="n"/><s n="nhum"/></l><r>English<s n="n"/></r></p></e>
+      <e><p><l>ދިވެހިބަސް<s n="n"/><s n="nhum"/></l><r>Maldivian<s n="n"/></r></p></e>
+      <e><p><l>މުބާރާތް<s n="n"/><s n="nhum"/></l><r>competition<s n="n"/></r></p></e>
+      <e><p><l>ތަރައްގީ<s n="n"/><s n="nhum"/></l><r>improvement<s n="n"/></r></p></e>
+      <e><p><l>އާއިލާ<s n="n"/><s n="nhum"/></l><r>family<s n="n"/></r></p></e>
+      <e><p><l>އާމްދަނީ<s n="n"/><s n="nhum"/></l><r>income<s n="n"/></r></p></e>
+      <e><p><l>އިތުރުވުން<s n="n"/><s n="nhum"/></l><r>surplus<s n="n"/></r></p></e>
+      <e><p><l>އިސްލާޙް<s n="n"/><s n="nhum"/></l><r>reform<s n="n"/></r></p></e>
+      <e><p><l>ޑިމޮކްރެސީ<s n="n"/><s n="nhum"/></l><r>democracy<s n="n"/></r></p></e>
+      <e><p><l>މަދްރަސާ<s n="n"/><s n="nhum"/></l><r>school<s n="n"/></r></p></e>
+      <e><p><l>ގެ<s n="n"/><s n="nhum"/></l><r>house<s n="n"/></r></p></e>
+      <e><p><l>ރޫޙާއި<s n="n"/><s n="nhum"/></l><r>spirit<s n="n"/></r></p></e>
+      <e><p><l>ދަނޑި<s n="n"/><s n="nhum"/></l><r>pole<s n="n"/></r></p></e>
+      <e><p><l>ބޮކި<s n="n"/><s n="nhum"/></l><r>light<b/>bulb<s n="n"/></r></p></e>
+      <e><p><l>ބޮކި<s n="n"/><s n="nhum"/></l><r>bubble<s n="n"/></r></p></e>
+      <e><p><l>ސަރަހައްދު<s n="n"/><s n="nhum"/></l><r>region<s n="n"/></r></p></e>
+      <e><p><l>ސައިބޯނި<s n="n"/><s n="nhum"/></l><r>soap<s n="n"/></r></p></e>
+      <e><p><l>ގަޑި<s n="n"/><s n="nhum"/></l><r>hour<s n="n"/></r></p></e>
+      <e><p><l>ގަޑި<s n="n"/><s n="nhum"/></l><r>clock<s n="n"/></r></p></e>
+      <e><p><l>އިރު<s n="n"/><s n="nhum"/></l><r>time<s n="n"/></r></p></e>
+      <e><p><l>ރީތިކަން<s n="n"/><s n="nhum"/></l><r>beauty<s n="n"/></r></p></e>
+      <e><p><l>ގޮތް<s n="n"/><s n="nhum"/></l><r>way<s n="n"/></r></p></e>
+      <e><p><l>އަތުކުރީ<s n="n"/><s n="nhum"/></l><r>wrist<s n="n"/></r></p></e>
+      <e><p><l>ވާހަކަ<s n="n"/><s n="nhum"/></l><r>story<s n="n"/></r></p></e>
+      <e><p><l>މަސައްކަތް<s n="n"/><s n="nhum"/></l><r>work<s n="n"/></r></p></e>
+      <e><p><l>ކަން<s n="n"/><s n="nhum"/></l><r>action<s n="n"/></r></p></e>
+      <e><p><l>ދީން<s n="n"/><s n="nhum"/></l><r>religion<s n="n"/></r></p></e>
+      <e><p><l>ޖަލްސާ<s n="n"/><s n="nhum"/></l><r>assembly<s n="n"/></r></p></e>
+      <e><p><l>ދަތުރު<s n="n"/><s n="nhum"/></l><r>journey<s n="n"/></r></p></e>
+      <e><p><l>ބޯ<s n="n"/><s n="nhum"/></l><r>head<s n="n"/></r></p></e>
+      <e><p><l>ލޯ<s n="n"/><s n="nhum"/></l><r>eye<s n="n"/></r></p></e>
+      <e><p><l>ނޭފަތް<s n="n"/><s n="nhum"/></l><r>nose<s n="n"/></r></p></e>
+      <e><p><l>މައްސަލަ<s n="n"/><s n="nhum"/></l><r>case<s n="n"/></r></p></e>
+      <e><p><l>ސަރުކާރު<s n="n"/><s n="nhum"/></l><r>government<s n="n"/></r></p></e>
+      <e><p><l>ތަން<s n="n"/><s n="nhum"/></l><r>place<s n="n"/></r></p></e>
+      <e><p><l>ގެރިބަކަރި<s n="n"/><s n="nhum"/></l><r>livestock<s n="n"/></r></p></e>
+      <e><p><l>ކަނޑިބަޑި<s n="n"/><s n="nhum"/></l><r>weapon<s n="n"/></r></p></e>
+      <e><p><l>ފޭޑި<s n="n"/><s n="nhum"/></l><r>skill<s n="n"/></r></p></e>
+      <e><p><l>ސޫފި<s n="n"/><s n="nhum"/></l><r>insect<s n="n"/></r></p></e>
+      <e><p><l>ދޫނި<s n="n"/><s n="nhum"/></l><r>bird<s n="n"/></r></p></e>
+      <e><p><l>މަސް<s n="n"/><s n="nhum"/></l><r>fish<s n="n"/></r></p></e>
+      <e><p><l>މާ<s n="n"/><s n="nhum"/></l><r>flower<s n="n"/></r></p></e>
+      <e><p><l>ގަސް<s n="n"/><s n="nhum"/></l><r>tree<s n="n"/></r></p></e>
+      <e><p><l>މިން<s n="n"/><s n="nhum"/></l><r>amount<s n="n"/></r></p></e>
+      <e><p><l>ބަރުމިން<s n="n"/><s n="nhum"/></l><r>weight<s n="n"/></r></p></e>
+      <e><p><l>އުސްމިން<s n="n"/><s n="nhum"/></l><r>height<s n="n"/></r></p></e>
+      <e><p><l>ހޫނުމިން<s n="n"/><s n="nhum"/></l><r>temperature<s n="n"/></r></p></e>
+      <e><p><l>ފެން<s n="n"/><s n="nhum"/></l><r>water<s n="n"/></r></p></e>
+      <e><p><l>ހަރު<s n="n"/><s n="nhum"/></l><r>shelf<s n="n"/></r></p></e>
+      <e><p><l>ފެންގަނޑު<s n="n"/><s n="nhum"/></l><r>lake<s n="n"/></r></p></e>
+      <e><p><l>ކުއްތާ<s n="n"/><s n="nhum"/></l><r>dog<s n="n"/></r></p></e>
+      <e><p><l>ޙައްޤު<s n="n"/><s n="nhum"/></l><r>right<s n="n"/></r></p></e>
+      <e><p><l>އަސަރު<s n="n"/><s n="nhum"/></l><r>effect<s n="n"/></r></p></e>
+      <e><p><l>ރިޕޯޓް<s n="n"/><s n="nhum"/></l><r>report<s n="n"/></r></p></e>
+      <e><p><l>ވެލާ<s n="n"/><s n="nhum"/></l><r>sea<b/>turtle<s n="n"/></r></p></e>
+      <e><p><l>ކުކުޅު<s n="n"/><s n="nhum"/></l><r>chicken<s n="n"/></r></p></e>
+
+      <e><p><l>ހޯމަ<s n="n"/><s n="nhum"/></l><r>Monday<s n="n"/></r></p></e>
+      <e><p><l>އަންގާރަ<s n="n"/><s n="nhum"/></l><r>Tuesday<s n="n"/></r></p></e>
+      <e><p><l>ބުދަ<s n="n"/><s n="nhum"/></l><r>Wednesday<s n="n"/></r></p></e>
+      <e><p><l>ބުރާސްފަތި<s n="n"/><s n="nhum"/></l><r>Thursday<s n="n"/></r></p></e>
+      <e><p><l>ހުކުރު<s n="n"/><s n="nhum"/></l><r>Friday<s n="n"/></r></p></e>
+      <e><p><l>ހޮނިހިރު<s n="n"/><s n="nhum"/></l><r>Saturday<s n="n"/></r></p></e>
+      <e><p><l>އާދީއްތި<s n="n"/><s n="nhum"/></l><r>Sunday<s n="n"/></r></p></e>
+      <e><p><l>ދުވަސް<s n="n"/><s n="nhum"/></l><r>day<s n="n"/></r></p></e>
+
+      <e><p><l>ދުނިޔެ<s n="n"/><s n="nhum"/></l><r>earth<s n="n"/></r></p></e>
+      <e><p><l>އަލިކަން<s n="n"/><s n="nhum"/></l><r>light<s n="n"/></r></p></e>
+      <e><p><l>ބިމުން<s n="n"/><s n="nhum"/></l><r>land<s n="n"/></r></p></e>
+
+      <!-- from lexicon BoatRoot -->
+      <e><p><l>ނާ<s n="n"/><s n="nhum"/></l><r>sailing<b/>ship<s n="n"/></r></p></e>
+      <e><p><l>މަތިންދާ<b/>ބޯޓު<s n="n"/><s n="nhum"/></l><r>airplane<s n="n"/></r></p></e>
+      <e><p><l>ބޯޓު<s n="n"/><s n="nhum"/></l><r>boat<s n="n"/></r></p></e>
+
+      <!-- from lexicon VerbRoot -->
+      <e><p><l>ހަދަ<s n="v"/></l><r>make<s n="vblex"/></r></p></e>
+      <e><p><l>ކުރަ<s n="v"/></l><r>do<s n="vblex"/></r></p></e>
+      <e><p><l>ފަށަ<s n="v"/></l><r>begin<s n="vblex"/></r></p></e>
+      <e><p><l>ބަލަ<s n="v"/></l><r>look<b/>at<s n="vblex"/></r></p></e>
+      <e><p><l>ކުޅެ<s n="v"/></l><r>play<s n="vblex"/></r></p></e>
+      <e><p><l>ނަށަ<s n="v"/></l><r>dance<s n="vblex"/></r></p></e>
+      <e><p><l>ޖަހަ<s n="v"/></l><r>hit<s n="vblex"/></r></p></e>
+      <e><p><l>ދައްކަ<s n="v"/></l><r>shows<s n="vblex"/></r></p></e>
+      <e><p><l>ދެކެ<s n="v"/></l><r>see<s n="vblex"/></r></p></e>
+      <e><p><l>ފެތެ<s n="v"/></l><r>sink<s n="vblex"/></r></p></e>
+      <e><p><l>ނިމެ<s n="v"/></l><r>end<s n="vblex"/></r></p></e>
+      <e><p><l>ވާހަކަ<b/>ދެކްކި<s n="v"/></l><r>speak<s n="vblex"/></r></p></e>
+      <e><p><l>ޖެހޭ<s n="v"/></l><r>hit<s n="vblex"/></r></p></e>
+      <e><p><l>އިތުރުވުން<s n="v"/></l><r>increase<s n="vblex"/></r></p></e>
+      <e><p><l>ވާނީ<s n="v"/></l><r>be<s n="v"/></r></p></e>
+      <e><p><l>ދުކޮހް<s n="v"/></l><r>leave<s n="vblex"/></r></p></e>
+      <e><p><l>ޖަހައި<s n="v"/></l><r>strike<s n="vblex"/></r></p></e>
+      <e><p><l>އޮތް<s n="v"/></l><r>be<s n="v"/></r></p></e>
+      <e><p><l>ވަނީ<s n="v"/></l><r>be<s n="v"/></r></p></e>
+      <e><p><l>ހިމެނޭ<s n="v"/></l><r>include<s n="vblex"/></r></p></e>
+      <e><p><l>ދައްކުވައިދޭ<s n="v"/></l><r>indicate<s n="vblex"/></r></p></e>
+      <e><p><l>ދުކޮށްލާ<s n="v"/></l><r>release<s n="vblex"/></r></p></e>
+      <e><p><l>އުފައްދައިފި<s n="v"/></l><r>produce<s n="vblex"/></r></p></e>
+      <e><p><l>ދައްކާ<s n="v"/></l><r>show<s n="vblex"/></r></p></e>
+
+      <!-- from lexicon AdjRoot -->
+      <e><p><l>ތަފާތު<s n="adj"/></l><r>different<s n="adj"/></r></p></e>
+      <e><p><l>ބޮޑު<s n="adj"/></l><r>big<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ހަމަ<s n="adj"/></l><r>just<s n="adj"/></r></p></e>
+      <e><p><l>ފުރަތަމަ<s n="adj"/></l><r>first<s n="adj"/></r></p></e>
+      <e><p><l>އެކަނި<s n="adj"/></l><r>alone<s n="adj"/></r></p></e>
+      <e><p><l>ސާފު<s n="adj"/></l><r>clean<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ހޭދަ<s n="adj"/></l><r>spending<s n="adj"/></r></p></e>
+      <e><p><l>ޒަމާނީ<s n="adj"/></l><r>modern<s n="adj"/></r></p></e>
+      <e><p><l>ބޮޑެވެ<s n="adj"/></l><r>big<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ކުޑަ<s n="adj"/></l><r>small<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>މޮޅު<s n="adj"/></l><r>excellent<s n="adj"/></r></p></e>
+      <e><p><l>ހޫނު<s n="adj"/></l><r>hot<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ބަރު<s n="adj"/></l><r>heavy<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>އުސް<s n="adj"/></l><r>high<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ރީތި<s n="adj"/></l><r>beautiful<s n="adj"/></r></p></e>
+      <e><p><l>ވަކި<s n="adj"/></l><r>separate<s n="adj"/></r></p></e>
+      <e><p><l>ބިރުކުޑަ<s n="adj"/></l><r>fearless<s n="adj"/></r></p></e>
+      <e><p><l>ދީންވެރި<s n="adj"/></l><r>religious<s n="adj"/></r></p></e>
+      <e><p><l>ލަދުވެތި<s n="adj"/></l><r>shy<s n="adj"/></r></p></e>
+      <e><p><l>ބިރުވެރި<s n="adj"/></l><r>fearful<s n="adj"/></r></p></e>
+      <e><p><l>ބިރުވެތި<s n="adj"/></l><r>respectful<s n="adj"/></r></p></e>
+      <e><p><l>އަޅުވެތި<s n="adj"/></l><r>slavish<s n="adj"/></r></p></e>
+      <e><p><l>ރަހީމްވަންތަ<s n="adj"/></l><r>merciful<s n="adj"/></r></p></e>
+      <e><p><l>އެއްބައިވަންތަ<s n="adj"/></l><r>unified<s n="adj"/></r></p></e>
+      <e><p><l>ދަރުމަވަންތަ<s n="adj"/></l><r>righteous<s n="adj"/></r></p></e>
+      <e><p><l>އެހީތެރި<s n="adj"/></l><r>helpful<s n="adj"/></r></p></e>
+      <e><p><l>ގަދަ<s n="adj"/></l><r>strong<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ހެޔޮ<s n="adj"/></l><r>good<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>އަގުހެޔޮ<s n="adj"/></l><r>inexpensive<s n="adj"/></r></p></e>
+      <e><p><l>ހުސް<s n="adj"/></l><r>empty<s n="adj"/></r></p></e>
+      <e><p><l>ފިނި<s n="adj"/></l><r>cold<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ގޯސް<s n="adj"/></l><r>bad<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ހުދު<s n="adj"/></l><r>white<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ރަތް<s n="adj"/></l><r>red<s n="adj"/></r></p></e>
+      <e><p><l>ނޫ<s n="adj"/></l><r>blue<s n="adj"/></r></p></e>
+      <e><p><l>ފެހިކުލައިގެ<s n="adj"/></l><r>green<s n="adj"/></r></p></e>
+      <e><p><l>ކަޅު<s n="adj"/></l><r>black<s n="adj"/></r></p></e>
+      <e><p><l>ކުރު<s n="adj"/></l><r>short<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ވަގުތުން<s n="adj"/></l><r>instant<s n="adj"/></r></p></e>
+      <e><p><l>ގަދީމީ<s n="adj"/></l><r>ancient<s n="adj"/></r></p></e>
+      <e><p><l>ރަސްމީ<s n="adj"/></l><r>official<s n="adj"/></r></p></e>
+      <e><p><l>އެކި<s n="adj"/></l><r>various<s n="adj"/></r></p></e>
+      <e><p><l>ހުރި<s n="adj"/></l><r>existing<s n="adj"/></r></p></e>
+      <e><p><l>ހުރިހާ<s n="adj"/></l><r>entire<s n="adj"/></r></p></e>
+
+      <e><p><l>ދިގު<s n="adj"/></l><r>long<s n="adj"/><s n="sint"/></r></p></e>
+      <e><p><l>ދިގެވެ<s n="adj"/></l><r>long<s n="adj"/><s n="sint"/></r></p></e>
+
+      <!-- from lexicon AdverbRoot -->
+      <e><p><l>މަދުން<s n="adv"/></l><r>rarely<s n="adv"/></r></p></e>
+      <e><p><l>ކަށަވަރުން<s n="adv"/></l><r>certainly<s n="adv"/></r></p></e>
+      <e><p><l>ފަހުން<s n="adv"/></l><r>afterward<s n="adv"/></r></p></e>
+      <e><p><l>ކުރިން<s n="adv"/></l><r>before<s n="adv"/></r></p></e>
+      <e><p><l>މަތިން<s n="adv"/></l><r>above<s n="adv"/></r></p></e>
+      <e><p><l>މަޑުމަޑުން<s n="adv"/></l><r>slowly<s n="adv"/></r></p></e>
+      <e><p><l>މިއަދު<s n="adv"/></l><r>today<s n="adv"/></r></p></e>
+      <e><p><l>މާދަމާ<s n="adv"/></l><r>tomorrow<s n="adv"/></r></p></e>
+      <e><p><l>ބޮޑަށް<s n="adv"/></l><r>greatly<s n="adv"/></r></p></e>
+      <e><p><l>އަވަހަށް<s n="adv"/></l><r>quickly<s n="adv"/></r></p></e>
+      <e><p><l>މައްޗަށް<s n="adv"/></l><r>upward<s n="adv"/></r></p></e>
+      <e><p><l>ޚާއްސަކޮށް<s n="adv"/></l><r>especially<s n="adv"/></r></p></e>
+      <e><p><l>އާންމުކޮށް<s n="adv"/></l><r>generally<s n="adv"/></r></p></e>
+      <e><p><l>ކުޑަކޮށް<s n="adv"/></l><r>a little<s n="adv"/></r></p></e>
+      <e><p><l>މާ<s n="adv"/></l><r>much<s n="adv"/></r></p></e>
+      <e><p><l>އަދިވެސް<s n="adv"/></l><r>still<s n="adv"/></r></p></e>
+      <e><p><l>ނުވަނީސް<s n="adv"/></l><r>before<s n="adv"/></r></p></e>
+      <e><p><l>ވަރަށް<s n="adv"/></l><r>very<s n="adv"/></r></p></e>
+      <e><p><l>ދެން<s n="adv"/></l><r>then<s n="adv"/></r></p></e>
+      <e><p><l>އެހެންނަމަވެސް<s n="adv"/></l><r>nevertheless<s n="adv"/></r></p></e>
+      <e><p><l>ކޮންމެހެން<s n="adv"/></l><r>somehow<s n="adv"/></r></p></e>
+      <e><p><l>އެހެންވީރު<s n="adv"/></l><r>so<s n="adv"/></r></p></e>
+
+      <!-- from lexicon PPRoot -->
+      <e><p><l>މަ<s n="prn"/><s n="pers"/></l><r>I<s n="prn"/></r></p></e>
+      <e><p><l>އަހަރެން<s n="prn"/><s n="pers"/></l><r>I<s n="prn"/></r></p></e>
+      <e><p><l>އަޅުގަނޑު<s n="prn"/><s n="pers"/></l><r>I<s n="prn"/></r></p></e>
+      <e><p><l>ކަލޭ<s n="prn"/><s n="pers"/></l><r>you<s n="prn"/></r></p></e>
+      <e><p><l>ތިބޭފުޅާ<s n="prn"/><s n="pers"/></l><r>you<s n="prn"/></r></p></e>
+      <e><p><l>އޭނާ<s n="prn"/><s n="pers"/></l><r>he<s n="prn"/></r></p></e>
+      <e><p><l>އޭނާ<s n="prn"/><s n="pers"/></l><r>she<s n="prn"/></r></p></e>
+      <e><p><l>މީނާ<s n="prn"/><s n="pers"/></l><r>he<s n="prn"/></r></p></e>
+      <e><p><l>މީނާ<s n="prn"/><s n="pers"/></l><r>she<s n="prn"/></r></p></e>
+      <e><p><l>އަހަރެމެން<s n="prn"/><s n="pers"/></l><r>we<s n="prn"/></r></p></e>
+      <e><p><l>އަޅުގަނޑުމެން<s n="prn"/><s n="pers"/></l><r>we<s n="prn"/></r></p></e>
+      <e><p><l>ކަލޭމެން<s n="prn"/><s n="pers"/></l><r>you<s n="prn"/></r></p></e>
+      <e><p><l>ތިމިހުން<s n="prn"/><s n="pers"/></l><r>you<s n="prn"/></r></p></e>
+      <e><p><l>އެމީހުން<s n="prn"/><s n="pers"/></l><r>they<s n="prn"/></r></p></e>
+      <e><p><l>މިމީހުން<s n="prn"/><s n="pers"/></l><r>they<s n="prn"/></r></p></e>
+
+      <e><p><l>އޭގެ<s n="prn"/><s n="pers"/></l><r>its<s n="det"/></r></p></e>
+
+      <!-- from lexicon QuestionRoot -->
+      <e><p><l>ކާކު<s n="itg"/></l><r>who<s n="itg"/></r></p></e>
+      <e><p><l>ކީކް<s n="itg"/></l><r>what<s n="itg"/></r></p></e>
+      <e><p><l>ކީކޭ<s n="itg"/></l><r>what<s n="itg"/></r></p></e>
+      <e><p><l>ކޮން<s n="itg"/></l><r>which<s n="itg"/></r></p></e>
+      <e><p><l>ކޮބާ<s n="itg"/></l><r>where<s n = "adv"/><s n="itg"/></r></p></e>
+      <e><p><l>ކޮންތާކު<s n="itg"/></l><r>where<s n = "adv"/><s n="itg"/></r></p></e>
+      <e><p><l>ކީއްވެ<s n="itg"/></l><r>why<s n="itg"/></r></p></e>
+      <e><p><l>ކިހިނެކް<s n="itg"/></l><r>how<s n = "adv"/><s n="itg"/></r></p></e>
+      <e><p><l>ކޮން<b/>އިރަކު<s n="itg"/></l><r>when<s n="itg"/></r></p></e>
+      <e><p><l>ކޮންއިރަކު<s n="itg"/></l><r>when<s n="itg"/></r></p></e>
+      <e><p><l>ކިހާވަރަކަހް<s n="itg"/></l><r>how<b/>much<s n = "adv"/><s n="itg"/></r></p></e>
+      <e><p><l>ކިތައް<s n="itg"/></l><r>how<b/>many<s n = "adv"/><s n="itg"/></r></p></e>
+      <e><p><l>ކޮންކަހަލަ<s n="itg"/></l><r>what<b/>kind<s n="itg"/></r></p></e>
+      <e><p><l>ކޯއްޗެއް<s n="itg"/></l><r>which<b/>thing<s n="itg"/></r></p></e>
+      <e><p><l>ކޯންޗެއް<s n="itg"/></l><r>which<b/>thing<s n="itg"/></r></p></e>
+
+      <!-- from lexicon DemonRoot -->
+      <e><p><l>މީތި<s n="prn"/><s n="dem"/></l><r>this<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>މީތި<s n="prn"/><s n="dem"/></l><r>it<s n="prn"/><s n="dem"/></r></p></e>
+
+      <e><p><l>މި<s n="prn"/><s n="dem"/></l><r>this<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>މި<s n="prn"/><s n="dem"/></l><r>these<s n="prn"/><s n="dem"/></r></p></e>
+
+      <e><p><l>ތީތި<s n="prn"/><s n="dem"/></l><r>that<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>ތީތި<s n="prn"/><s n="dem"/></l><r>it<s n="prn"/><s n="dem"/></r></p></e>
+
+      <e><p><l>ތި<s n="prn"/><s n="dem"/></l><r>that<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>ތި<s n="prn"/><s n="dem"/></l><r>those<s n="prn"/><s n="dem"/></r></p></e>
+
+      <e><p><l>ތިޔަ<s n="prn"/><s n="dem"/></l><r>that<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>ތިޔަ<s n="prn"/><s n="dem"/></l><r>those<s n="prn"/><s n="dem"/></r></p></e>
+
+      <e><p><l>އޭތި<s n="prn"/><s n="dem"/></l><r>that<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>އޭތި<s n="prn"/><s n="dem"/></l><r>it<s n="prn"/><s n="dem"/></r></p></e>
+
+      <e><p><l>އެ<s n="prn"/><s n="dem"/></l><r>that<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>އެ<s n="prn"/><s n="dem"/></l><r>those<s n="prn"/><s n="dem"/></r></p></e>
+
+      <e><p><l>މިއެއްޗެހި<s n="prn"/><s n="dem"/></l><r>these<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>މިއެއްޗެހި<s n="prn"/><s n="dem"/></l><r>they<s n="prn"/><s n="dem"/></r></p></e>
+
+      <e><p><l>ތިއެއްޗެހި<s n="prn"/><s n="dem"/></l><r>those<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>ތިއެއްޗެހި<s n="prn"/><s n="dem"/></l><r>they<s n="prn"/><s n="dem"/></r></p></e>
+
+      <e><p><l>އެއެއްޗެހި<s n="prn"/><s n="dem"/></l><r>those<s n="prn"/><s n="dem"/></r></p></e>
+      <e><p><l>އެއެއްޗެހި<s n="prn"/><s n="dem"/></l><r>they<s n="prn"/><s n="dem"/></r></p></e>
+
+      <!-- from lexicon ConjRoot -->
+      <e><p><l>އަދި<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
+      <e><p><l>ނުވަތަ<s n="cnjcoo"/></l><r>or<s n="cnjcoo"/></r></p></e>
+      <e><p><l>އެކަމަކު<s n="cnjcoo"/></l><r>but<s n="cnjcoo"/></r></p></e>
+
+      <!-- from lexicon ModalWords -->
+      <e><p><l>އަކީ<s n="mod"/></l><r>is<s n="mod"/></r></p></e>
+      <e><p><l>ލާ<s n="mod"/></l><r><s n="mod"/></r></p></e>
+      <e><p><l>އެވެ<s n="mod"/></l><r><s n="mod"/></r></p></e>
+
+      <!-- from lexicon Proper-Nouns -->
+      <e><p><l>އަލީ<s n="np"/></l><r>Ali<s n="np"/></r></p></e>
+      <e><p><l>އަލް<b/>އަގްސާ<b/>މިސްކިތް<s n="np"/></l><r>Al-Aqsa<b/>Mosque<s n="np"/></r></p></e>
+      <e><p><l>ފަލަސްތީނުގެ<s n="np"/></l><r>Palestinian<s n="np"/></r></p></e>
+      <e><p><l>ނިހާނު<s n="np"/></l><r>Nihanu<s n="np"/></r></p></e>
+      <e><p><l>މާލެ<s n="np"/></l><r>Male<s n="np"/></r></p></e>
+      <e><p><l>އިބްރާހިމް<s n="np"/></l><r>Ibrahim<s n="np"/></r></p></e>
+      <e><p><l>މުޙައްމަދު<s n="np"/></l><r>Mohamed<s n="np"/></r></p></e>
+      <e><p><l>އާދަމް<s n="np"/></l><r>Adam<s n="np"/></r></p></e>
+      <e><p><l>އަހްމަދު<s n="np"/></l><r>Ahmed<s n="np"/></r></p></e>
+      <e><p><l>އައްޑޫ<s n="np"/></l><r>Addu<s n="np"/></r></p></e>
+      <e><p><l>މާތްﷲ<s n="np"/></l><r>God<s n="np"/></r></p></e>
+      <e><p><l>ޔޫސުފުގެފާނު<s n="np"/></l><r>Joseph<s n="np"/></r></p></e>
+      <e><p><l>އިބްރާހީމްގެފާނު<s n="np"/></l><r>Abraham<s n="np"/></r></p></e>
+
+      <!-- from lexicon Postpositions -->
+      <e><p><l>ޚިލާފު<s n="post"/></l><r>against<s n="post"/></r></p></e>
+
+      <!-- from lexicon NumbersRoot -->
+      <e><p><l>އެއް<s n="num"/></l><r>one<s n="num"/></r></p></e>
+      <e><p><l>ދެ<s n="num"/></l><r>two<s n="num"/></r></p></e>
+      <e><p><l>ތިން<s n="num"/></l><r>three<s n="num"/></r></p></e>
+      <e><p><l>ހަތަރު<s n="num"/></l><r>four<s n="num"/></r></p></e>
+      <e><p><l>ފަސް<s n="num"/></l><r>five<s n="num"/></r></p></e>
+      <e><p><l>ހަ<s n="num"/></l><r>six<s n="num"/></r></p></e>
+      <e><p><l>ހަތް<s n="num"/></l><r>seven<s n="num"/></r></p></e>
+      <e><p><l>އަށް<s n="num"/></l><r>eight<s n="num"/></r></p></e>
+      <e><p><l>ނުވަ<s n="num"/></l><r>nine<s n="num"/></r></p></e>
+      <e><p><l>ދިހަ<s n="num"/></l><r>ten<s n="num"/></r></p></e>
+
+      <e><p><l>އެކެއް<s n="num"/></l><r>one<s n="num"/></r></p></e>
+      <e><p><l>ދޭއް<s n="num"/></l><r>two<s n="num"/></r></p></e>
+      <e><p><l>ތިނެއް<s n="num"/></l><r>three<s n="num"/></r></p></e>
+      <e><p><l>ހަތަރެއް<s n="num"/></l><r>four<s n="num"/></r></p></e>
+      <e><p><l>ފަހެއް<s n="num"/></l><r>five<s n="num"/></r></p></e>
+      <e><p><l>ހައެއް<s n="num"/></l><r>six<s n="num"/></r></p></e>
+      <e><p><l>ހަތެއް<s n="num"/></l><r>seven<s n="num"/></r></p></e>
+      <e><p><l>އަށެއް<s n="num"/></l><r>eight<s n="num"/></r></p></e>
+      <e><p><l>ނުވައެއް<s n="num"/></l><r>nine<s n="num"/></r></p></e>
+      <e><p><l>ދިހައެއް<s n="num"/></l><r>ten<s n="num"/></r></p></e>
+      <e><p><l>އެގާރަ<s n="num"/></l><r>eleven<s n="num"/></r></p></e>
+      <e><p><l>ބާރަ<s n="num"/></l><r>twelve<s n="num"/></r></p></e>
+      <e><p><l>ތޭރަ<s n="num"/></l><r>thirteen<s n="num"/></r></p></e>
+      <e><p><l>ސާދަ<s n="num"/></l><r>fourteen<s n="num"/></r></p></e>
+      <e><p><l>ފަނަރަ<s n="num"/></l><r>fifteen<s n="num"/></r></p></e>
+      <e><p><l>ސޯޅަ<s n="num"/></l><r>sixteen<s n="num"/></r></p></e>
+      <e><p><l>ސަތާރަ<s n="num"/></l><r>seventeen<s n="num"/></r></p></e>
+      <e><p><l>އަށާރަ<s n="num"/></l><r>eighteen<s n="num"/></r></p></e>
+      <e><p><l>ނަވާރަ<s n="num"/></l><r>nineteen<s n="num"/></r></p></e>
+      <e><p><l>ވިހި<s n="num"/></l><r>twenty<s n="num"/></r></p></e>
+      <e><p><l>ތިރީސް<s n="num"/></l><r>thirty<s n="num"/></r></p></e>
+      <e><p><l>ސާޅީސް<s n="num"/></l><r>forty<s n="num"/></r></p></e>
+      <e><p><l>ފަންސާސް<s n="num"/></l><r>fifty<s n="num"/></r></p></e>
+      <e><p><l>ފަސްދޮޅަސް<s n="num"/></l><r>sixty<s n="num"/></r></p></e>
+      <e><p><l>ހަތްދިހަ<s n="num"/></l><r>seventy<s n="num"/></r></p></e>
+      <e><p><l>އައްޑިހަ<s n="num"/></l><r>eighty<s n="num"/></r></p></e>
+      <e><p><l>ނުވަދިހަ<s n="num"/></l><r>ninty<s n="num"/></r></p></e>
+      <e><p><l>ސަތޭކަ<s n="num"/></l><r>one hundred<s n="num"/></r></p></e>
+      <e><p><l>ދުއިސައްތަ<s n="num"/></l><r>two hundred<s n="num"/></r></p></e>
+      <e><p><l>ތިންސަތޭކަ<s n="num"/></l><r>three hundred<s n="num"/></r></p></e>
+      <e><p><l>އެއްހާސް<s n="num"/></l><r>one thousand<s n="num"/></r></p></e>
+      <e><p><l>އެއްލައްކަ<s n="num"/></l><r>one hundred thousand<s n="num"/></r></p></e>
+
+      <!-- from lexicon Noun-Number-Prefix -->
+      <e><p><l>އެއް<s n="num"/></l><r>one<s n="num"/></r></p></e>
+      <e><p><l>ދެ<s n="num"/></l><r>two<s n="num"/></r></p></e>
+      <e><p><l>ތިން<s n="num"/></l><r>three<s n="num"/></r></p></e>
+      <e><p><l>ހަތަރު<s n="num"/></l><r>four<s n="num"/></r></p></e>
+      <e><p><l>ފަސް<s n="num"/></l><r>five<s n="num"/></r></p></e>
+      <e><p><l>ހަ<s n="num"/></l><r>six<s n="num"/></r></p></e>
+      <e><p><l>ހަތް<s n="num"/></l><r>seven<s n="num"/></r></p></e>
+      <e><p><l>އަށް<s n="num"/></l><r>eight<s n="num"/></r></p></e>
+      <e><p><l>ނުވަ<s n="num"/></l><r>nine<s n="num"/></r></p></e>
+      <e><p><l>ދިހަ<s n="num"/></l><r>ten<s n="num"/></r></p></e>
+
+      <!-- from lexicon Noun-DemDet-Prefix -->
+      <e><p><l>މި<s n="det"/><s n="dem"/></l><r>this<s n="det"/><s n="dem"/></r></p></e>
+      <e><p><l>މި<s n="det"/><s n="dem"/></l><r>these<s n="det"/><s n="dem"/></r></p></e>
+
+      <e><p><l>ތި<s n="det"/><s n="dem"/></l><r>that<s n="det"/><s n="dem"/></r></p></e>
+      <e><p><l>ތި<s n="det"/><s n="dem"/></l><r>those<s n="det"/><s n="dem"/></r></p></e>
+
+      <e><p><l>އެ<s n="det"/><s n="dem"/></l><r>that<s n="det"/><s n="dem"/></r></p></e>
+      <e><p><l>އެ<s n="det"/><s n="dem"/></l><r>those<s n="det"/><s n="dem"/></r></p></e>
+
+      <!-- from lexicon NounClitics -->
+      <e><p><l>އޯ<s n="mod"/></l><r></r></p></e>
+      <e><p><l>އޭ<s n="mod"/></l><r></r></p></e>
+      <e><p><l>ވެސް<s n="mod"/></l><r></r></p></e>
+      <e><p><l>ވުރެ<s n="post"/></l><r>compared<b/>to<s n="post"/></r></p></e>
+
+      <!-- from lexicon Determiners -->
+      <e><p><l>މިފަދަ<s n="det"/></l><r>this type of<s n="det"/></r></p></e>
+      <e><p><l>ކޮންމެ<s n="det"/></l><r>some<s n="det"/></r></p></e>
+      <e><p><l>ކޮންމެ<s n="det"/></l><r>any<s n="det"/></r></p></e>
+      <e><p><l>އެއްވެސް<s n="det"/></l><r>any<s n="det"/></r></p></e>
+      <e><p><l>އެފަދަ<s n="det"/></l><r>such<s n="det"/></r></p></e>
+      <e><p><l>އެންމެ<s n="det"/></l><r>a<b/>single<s n="det"/></r></p></e>
+      <e><p><l>އެންމެ<s n="det"/></l><r>the<b/>most<s n="det"/></r></p></e>
+
+      <e><p><l>ނު<s n="neg"/></l><r>not<s n="adv"/></r></p></e>
+
+      <!--  msc -->
+      <e><p><l>އެންމެން<s n="prn"/></l><r>everyone<s n="prn"/></r></p></e>
+      <e><p><l>ބަޔަކު<s n="prn"/></l><r>someone<s n="prn"/></r></p></e>
+      <e><p><l>ހުރިހާ<s n="prn"/></l><r>all<s n="prn"/></r></p></e>
+
+      <e><p><l>އެކަލާނގެ<s n="n"/><s n="hum"/></l><r>that<b/>god<s n="n"/></r></p></e>
+
+      <e><p><l>އާނ<s n="prn"/></l><r>yes<s n="ij"/></r></p></e>
+      <e><p><l>އެބަ<s n="cont"/></l><r></r></p></e>
+      <e><p><l>ފަ<s n="succ"/></l><r></r></p></e>
+
+      <!-- COPIED FROM apertium-kaz-kir.kaz-kir.dix -->
+      <!-- This is a hack. At the moment the numeral lexicon will not generate zeros after commas -->
+      <e> <re>[0-9]+([.,][1-9]+|[,.][0-9]+[1-9])*</re><p><l><s n="num"/></l><r><s n="num"/></r></p></e>
+
+      <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
+      <e><p><l>؟<s n="sent"/></l><r>?<s n="sent"/></r></p></e>
+      <e><re>,</re>          <p><l><s n="cm"/></l>  <r><s n="cm"/></r></p></e>
+   </section>
+</dictionary>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Bilingual_dictionary
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Bilingual_dictionary
+-->

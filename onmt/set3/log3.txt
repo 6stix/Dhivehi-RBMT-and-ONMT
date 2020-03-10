@@ -1,0 +1,1204 @@
+/home/ 1/pyenv/local/lib/python2.7/site-packages/opennmt/config.py:139: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  subconfig = yaml.load(config_file.read())
+INFO:tensorflow:Using parameters:
+data:
+  eval_features_file: div_val.txt
+  eval_labels_file: eng_val.txt
+  source_words_vocabulary: div_vocab.txt
+  target_words_vocabulary: eng_vocab.txt
+  train_features_file: div_train.txt
+  train_labels_file: eng_train.txt
+eval:
+  batch_size: 32
+  eval_delay: 18000
+  exporters: last
+infer:
+  batch_size: 32
+  bucket_width: 5
+model_dir: /local/run_onmt_3/
+params:
+  average_loss_in_time: true
+  beam_width: 4
+  decay_params:
+    model_dim: 512
+    warmup_steps: 8000
+  decay_type: noam_decay_v2
+  label_smoothing: 0.1
+  learning_rate: 2.0
+  length_penalty: 0.6
+  optimizer: LazyAdamOptimizer
+  optimizer_params:
+    beta1: 0.9
+    beta2: 0.998
+score:
+  batch_size: 64
+train:
+  average_last_checkpoints: 8
+  batch_size: 3072
+  batch_type: tokens
+  bucket_width: 1
+  effective_batch_size: 25000
+  keep_checkpoint_max: 8
+  maximum_features_length: 100
+  maximum_labels_length: 100
+  sample_buffer_size: -1
+  save_summary_steps: 100
+  train_steps: 500000
+
+INFO:tensorflow:Accumulate gradients of 9 iterations to reach effective batch size of 25000
+2019-05-13 00:08:02.001890: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-05-13 00:08:02.024454: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3504000000 Hz
+2019-05-13 00:08:02.024753: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x557c8d3b0ee0 executing computations on platform Host. Devices:
+2019-05-13 00:08:02.024770: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+INFO:tensorflow:Using config: {'_save_checkpoints_secs': 600, '_session_config': gpu_options {
+}
+allow_soft_placement: true
+graph_options {
+  rewrite_options {
+    layout_optimizer: OFF
+  }
+}
+, '_keep_checkpoint_max': 8, '_task_type': 'worker', '_train_distribute': None, '_is_chief': True, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f5cbd5f9a90>, '_model_dir': '/local/run_onmt_3/', '_protocol': None, '_save_checkpoints_steps': None, '_keep_checkpoint_every_n_hours': 10000, '_service': None, '_num_ps_replicas': 0, '_tf_random_seed': None, '_save_summary_steps': 100, '_device_fn': None, '_experimental_distribute': None, '_num_worker_replicas': 1, '_task_id': 0, '_log_step_count_steps': 900, '_evaluation_master': '', '_eval_distribute': None, '_global_id_in_cluster': 0, '_master': ''}
+INFO:tensorflow:Not using Distribute Coordinator.
+INFO:tensorflow:Running training and evaluation locally (non-distributed).
+INFO:tensorflow:Start train and evaluate loop. The evaluate will happen after every checkpoint. Checkpoint frequency is determined based on RunConfig arguments: save_checkpoints_steps None or save_checkpoints_secs 600.
+WARNING:tensorflow:From /home/ 1/pyenv/local/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+INFO:tensorflow:Training on 860 examples
+INFO:tensorflow:Calling model_fn.
+WARNING:tensorflow:From /home/ 1/pyenv/local/lib/python2.7/site-packages/opennmt/encoders/self_attention_encoder.py:59: dropout (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dropout instead.
+WARNING:tensorflow:From /home/ 1/pyenv/local/lib/python2.7/site-packages/tensorflow/python/keras/layers/core.py:143: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/ 1/pyenv/local/lib/python2.7/site-packages/opennmt/layers/transformer.py:136: conv1d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv1d instead.
+WARNING:tensorflow:From /home/ 1/pyenv/local/lib/python2.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+INFO:tensorflow:Number of trainable parameters: 50082749
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 0 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:loss = 7.9540825, step = 0
+INFO:tensorflow:Saving checkpoints for 62 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+WARNING:tensorflow:From /home/ 1/pyenv/local/lib/python2.7/site-packages/tensorflow/python/ops/metrics_impl.py:363: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+INFO:tensorflow:Starting evaluation at 2019-05-13T04:18:33Z
+INFO:tensorflow:Graph was finalized.
+WARNING:tensorflow:From /home/ 1/pyenv/local/lib/python2.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-62
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2019-05-13-04:18:47
+INFO:tensorflow:Saving dict for global step 62: global_step = 62, loss = 6.600372
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 62: /local/run_onmt_3/model.ckpt-62
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+WARNING:tensorflow:From /home/ 1/pyenv/local/lib/python2.7/site-packages/tensorflow/python/saved_model/signature_def_utils_impl.py:205: build_tensor_info (from tensorflow.python.saved_model.utils_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This function will only be available through the v1 compatibility library as tf.compat.v1.saved_model.utils.build_tensor_info or tf.compat.v1.saved_model.build_tensor_info.
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-62
+INFO:tensorflow:Assets added to graph.
+INFO:tensorflow:Assets written to: /local/run_onmt_3/export/latest/temp-1557721128/assets
+INFO:tensorflow:SavedModel written to: /local/run_onmt_3/export/latest/temp-1557721128/saved_model.pb
+INFO:tensorflow:loss = 6.406848, step = 100 (952.739 sec)
+INFO:tensorflow:Saving checkpoints for 126 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 192 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 5.894308, step = 200 (912.044 sec)
+INFO:tensorflow:Saving checkpoints for 258 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 5.421183, step = 300 (902.434 sec)
+INFO:tensorflow:Saving checkpoints for 326 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 392 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 4.9804716, step = 400 (901.592 sec)
+INFO:tensorflow:Saving checkpoints for 458 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 4.3592896, step = 500 (901.020 sec)
+INFO:tensorflow:Saving checkpoints for 523 into /local/run_onmt_3/model.ckpt.
+WARNING:tensorflow:From /home/ 1/pyenv/local/lib/python2.7/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 589 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.2117095, step = 600 (911.455 sec)
+INFO:tensorflow:Saving checkpoints for 655 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 2.906732, step = 700 (914.877 sec)
+INFO:tensorflow:Saving checkpoints for 723 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 789 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 2.6275113, step = 800 (913.763 sec)
+INFO:tensorflow:Saving checkpoints for 855 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109562
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 3.109973, step = 900 (906.100 sec)
+INFO:tensorflow:Saving checkpoints for 920 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 986 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 2.5707133, step = 1000 (902.033 sec)
+INFO:tensorflow:Saving checkpoints for 1052 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.9212095, step = 1100 (899.541 sec)
+INFO:tensorflow:Saving checkpoints for 1120 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 1186 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.3045818, step = 1200 (906.134 sec)
+INFO:tensorflow:Saving checkpoints for 1252 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1739902, step = 1300 (915.044 sec)
+INFO:tensorflow:Saving checkpoints for 1318 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 1383 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.3852149, step = 1400 (914.700 sec)
+INFO:tensorflow:Saving checkpoints for 1449 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.2711233, step = 1500 (911.050 sec)
+INFO:tensorflow:Saving checkpoints for 1516 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 1583 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.2700616, step = 1600 (904.931 sec)
+INFO:tensorflow:Saving checkpoints for 1649 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.3225576, step = 1700 (900.523 sec)
+INFO:tensorflow:Saving checkpoints for 1714 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 1780 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.110339
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.2189041, step = 1800 (902.448 sec)
+INFO:tensorflow:Saving checkpoints for 1846 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1645418, step = 1900 (910.873 sec)
+INFO:tensorflow:Saving checkpoints for 1912 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 1980 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.2016096, step = 2000 (916.316 sec)
+INFO:tensorflow:Saving checkpoints for 2046 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2019-05-13T09:18:49Z
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-2046
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2019-05-13-09:19:03
+INFO:tensorflow:Saving dict for global step 2046: global_step = 2046, loss = 5.390487
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 2046: /local/run_onmt_3/model.ckpt-2046
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-2046
+INFO:tensorflow:Assets added to graph.
+INFO:tensorflow:Assets written to: /local/run_onmt_3/export/latest/temp-1557739143/assets
+INFO:tensorflow:SavedModel written to: /local/run_onmt_3/export/latest/temp-1557739143/saved_model.pb
+INFO:tensorflow:source_words/sec: 284
+INFO:tensorflow:target_words/sec: 378
+INFO:tensorflow:loss = 1.2597226, step = 2100 (933.177 sec)
+INFO:tensorflow:Saving checkpoints for 2110 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 2176 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 384
+INFO:tensorflow:loss = 1.2107135, step = 2200 (909.814 sec)
+INFO:tensorflow:Saving checkpoints for 2241 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 288
+INFO:tensorflow:target_words/sec: 384
+INFO:tensorflow:loss = 1.1809574, step = 2300 (906.038 sec)
+INFO:tensorflow:Saving checkpoints for 2307 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 2372 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.185652, step = 2400 (902.770 sec)
+INFO:tensorflow:Saving checkpoints for 2438 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1625761, step = 2500 (905.860 sec)
+INFO:tensorflow:Saving checkpoints for 2504 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 2572 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1401852, step = 2600 (916.703 sec)
+INFO:tensorflow:Saving checkpoints for 2638 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109551
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1591991, step = 2700 (913.569 sec)
+INFO:tensorflow:Saving checkpoints for 2704 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 2769 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1708843, step = 2800 (912.385 sec)
+INFO:tensorflow:Saving checkpoints for 2835 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.2380242, step = 2900 (902.814 sec)
+INFO:tensorflow:Saving checkpoints for 2901 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 2968 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.2192225, step = 3000 (902.079 sec)
+INFO:tensorflow:Saving checkpoints for 3035 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.153468, step = 3100 (901.101 sec)
+INFO:tensorflow:Saving checkpoints for 3101 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 3166 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1259763, step = 3200 (912.303 sec)
+INFO:tensorflow:Saving checkpoints for 3232 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 3298 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1389208, step = 3300 (916.839 sec)
+INFO:tensorflow:Saving checkpoints for 3364 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.13543, step = 3400 (912.386 sec)
+INFO:tensorflow:Saving checkpoints for 3432 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 3498 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.150133, step = 3500 (907.307 sec)
+INFO:tensorflow:Saving checkpoints for 3563 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.110191
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1495328, step = 3600 (901.014 sec)
+INFO:tensorflow:Saving checkpoints for 3629 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 3695 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1937034, step = 3700 (902.436 sec)
+INFO:tensorflow:Saving checkpoints for 3760 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.2071755, step = 3800 (905.035 sec)
+INFO:tensorflow:Saving checkpoints for 3828 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 3894 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1776401, step = 3900 (916.701 sec)
+INFO:tensorflow:Saving checkpoints for 3960 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1462646, step = 4000 (913.755 sec)
+INFO:tensorflow:Saving checkpoints for 4026 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2019-05-13T14:19:08Z
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-4026
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2019-05-13-14:19:22
+INFO:tensorflow:Saving dict for global step 4026: global_step = 4026, loss = 5.60048
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 4026: /local/run_onmt_3/model.ckpt-4026
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-4026
+INFO:tensorflow:Assets added to graph.
+INFO:tensorflow:Assets written to: /local/run_onmt_3/export/latest/temp-1557757162/assets
+INFO:tensorflow:SavedModel written to: /local/run_onmt_3/export/latest/temp-1557757162/saved_model.pb
+INFO:tensorflow:Saving checkpoints for 4090 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 283
+INFO:tensorflow:target_words/sec: 377
+INFO:tensorflow:loss = 1.1385028, step = 4100 (933.900 sec)
+INFO:tensorflow:Saving checkpoints for 4156 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1347493, step = 4200 (902.393 sec)
+INFO:tensorflow:Saving checkpoints for 4222 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 4287 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1419522, step = 4300 (902.983 sec)
+INFO:tensorflow:Saving checkpoints for 4354 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1496934, step = 4400 (902.386 sec)
+INFO:tensorflow:Saving checkpoints for 4421 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 4487 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109828
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1171479, step = 4500 (913.650 sec)
+INFO:tensorflow:Saving checkpoints for 4553 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1337422, step = 4600 (915.560 sec)
+INFO:tensorflow:Saving checkpoints for 4618 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 4684 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1266652, step = 4700 (914.483 sec)
+INFO:tensorflow:Saving checkpoints for 4750 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1465077, step = 4800 (906.922 sec)
+INFO:tensorflow:Saving checkpoints for 4818 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 4884 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1307421, step = 4900 (903.761 sec)
+INFO:tensorflow:Saving checkpoints for 4950 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1330583, step = 5000 (901.117 sec)
+INFO:tensorflow:Saving checkpoints for 5015 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 5081 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1538653, step = 5100 (907.126 sec)
+INFO:tensorflow:Saving checkpoints for 5147 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1386658, step = 5200 (915.106 sec)
+INFO:tensorflow:Saving checkpoints for 5214 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 5281 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1440195, step = 5300 (915.667 sec)
+INFO:tensorflow:Saving checkpoints for 5347 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109878
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1447256, step = 5400 (911.954 sec)
+INFO:tensorflow:Saving checkpoints for 5412 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 5478 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1508485, step = 5500 (904.649 sec)
+INFO:tensorflow:Saving checkpoints for 5544 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.2344339, step = 5600 (901.459 sec)
+INFO:tensorflow:Saving checkpoints for 5610 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 5678 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1631136, step = 5700 (902.944 sec)
+INFO:tensorflow:Saving checkpoints for 5743 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1204407, step = 5800 (910.544 sec)
+INFO:tensorflow:Saving checkpoints for 5809 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 5875 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1397538, step = 5900 (917.223 sec)
+INFO:tensorflow:Saving checkpoints for 5940 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1246109, step = 6000 (912.838 sec)
+INFO:tensorflow:Saving checkpoints for 6006 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2019-05-13T19:19:32Z
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-6006
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2019-05-13-19:19:46
+INFO:tensorflow:Saving dict for global step 6006: global_step = 6006, loss = 5.6704245
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 6006: /local/run_onmt_3/model.ckpt-6006
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-6006
+INFO:tensorflow:Assets added to graph.
+INFO:tensorflow:Assets written to: /local/run_onmt_3/export/latest/temp-1557775186/assets
+INFO:tensorflow:SavedModel written to: /local/run_onmt_3/export/latest/temp-1557775186/saved_model.pb
+INFO:tensorflow:Saving checkpoints for 6070 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 283
+INFO:tensorflow:target_words/sec: 376
+INFO:tensorflow:loss = 1.129669, step = 6100 (928.705 sec)
+INFO:tensorflow:Saving checkpoints for 6136 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1341966, step = 6200 (900.887 sec)
+INFO:tensorflow:Saving checkpoints for 6203 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 6270 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.110007
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1292579, step = 6300 (902.411 sec)
+INFO:tensorflow:Saving checkpoints for 6336 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.137464, step = 6400 (905.726 sec)
+INFO:tensorflow:Saving checkpoints for 6402 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 6467 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1228138, step = 6500 (916.662 sec)
+INFO:tensorflow:Saving checkpoints for 6533 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 6599 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1861289, step = 6600 (914.869 sec)
+INFO:tensorflow:Saving checkpoints for 6667 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1527687, step = 6700 (910.516 sec)
+INFO:tensorflow:Saving checkpoints for 6733 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 6799 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.147917, step = 6800 (904.032 sec)
+INFO:tensorflow:Saving checkpoints for 6864 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1665356, step = 6900 (900.519 sec)
+INFO:tensorflow:Saving checkpoints for 6930 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 6996 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1358042, step = 7000 (902.938 sec)
+INFO:tensorflow:Saving checkpoints for 7064 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 291
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1129463, step = 7100 (910.045 sec)
+INFO:tensorflow:Saving checkpoints for 7130 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 7196 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109987
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1727331, step = 7200 (916.692 sec)
+INFO:tensorflow:Saving checkpoints for 7262 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1965792, step = 7300 (912.017 sec)
+INFO:tensorflow:Saving checkpoints for 7327 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 7393 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1741062, step = 7400 (907.449 sec)
+INFO:tensorflow:Saving checkpoints for 7461 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.2149268, step = 7500 (900.779 sec)
+INFO:tensorflow:Saving checkpoints for 7527 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 7593 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.139621, step = 7600 (902.506 sec)
+INFO:tensorflow:Saving checkpoints for 7659 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1267129, step = 7700 (904.988 sec)
+INFO:tensorflow:Saving checkpoints for 7724 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 7790 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1215799, step = 7800 (916.003 sec)
+INFO:tensorflow:Saving checkpoints for 7857 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1262196, step = 7900 (912.963 sec)
+INFO:tensorflow:Saving checkpoints for 7924 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 7990 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2019-05-14T00:19:50Z
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-7990
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2019-05-14-00:20:04
+INFO:tensorflow:Saving dict for global step 7990: global_step = 7990, loss = 5.741145
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 7990: /local/run_onmt_3/model.ckpt-7990
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-7990
+INFO:tensorflow:Assets added to graph.
+INFO:tensorflow:Assets written to: /local/run_onmt_3/export/latest/temp-1557793204/assets
+INFO:tensorflow:SavedModel written to: /local/run_onmt_3/export/latest/temp-1557793204/saved_model.pb
+INFO:tensorflow:source_words/sec: 283
+INFO:tensorflow:target_words/sec: 377
+INFO:tensorflow:loss = 1.1300168, step = 8000 (933.247 sec)
+INFO:tensorflow:Saving checkpoints for 8054 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109883
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1245062, step = 8100 (901.395 sec)
+INFO:tensorflow:Saving checkpoints for 8120 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 8186 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1383165, step = 8200 (901.878 sec)
+INFO:tensorflow:Saving checkpoints for 8251 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 284
+INFO:tensorflow:target_words/sec: 378
+INFO:tensorflow:loss = 1.1263037, step = 8300 (921.538 sec)
+INFO:tensorflow:Saving checkpoints for 8314 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 8374 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 264
+INFO:tensorflow:target_words/sec: 352
+INFO:tensorflow:loss = 1.1148989, step = 8400 (1000.122 sec)
+INFO:tensorflow:Saving checkpoints for 8437 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 8498 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 275
+INFO:tensorflow:target_words/sec: 367
+INFO:tensorflow:loss = 1.1819204, step = 8500 (964.821 sec)
+INFO:tensorflow:Saving checkpoints for 8561 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 273
+INFO:tensorflow:target_words/sec: 364
+INFO:tensorflow:loss = 1.1522925, step = 8600 (968.306 sec)
+INFO:tensorflow:Saving checkpoints for 8626 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 8691 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1302121, step = 8700 (907.057 sec)
+INFO:tensorflow:Saving checkpoints for 8757 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1263585, step = 8800 (899.899 sec)
+INFO:tensorflow:Saving checkpoints for 8823 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 8890 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1241075, step = 8900 (900.275 sec)
+INFO:tensorflow:Saving checkpoints for 8957 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.107549
+INFO:tensorflow:source_words/sec: 291
+INFO:tensorflow:target_words/sec: 388
+INFO:tensorflow:loss = 1.1197484, step = 9000 (903.713 sec)
+INFO:tensorflow:Saving checkpoints for 9023 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 9089 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1170977, step = 9100 (915.159 sec)
+INFO:tensorflow:Saving checkpoints for 9155 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1242498, step = 9200 (912.540 sec)
+INFO:tensorflow:Saving checkpoints for 9221 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 9289 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1335602, step = 9300 (910.925 sec)
+INFO:tensorflow:Saving checkpoints for 9355 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1422517, step = 9400 (900.504 sec)
+INFO:tensorflow:Saving checkpoints for 9420 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 9486 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1636066, step = 9500 (900.746 sec)
+INFO:tensorflow:Saving checkpoints for 9552 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1370653, step = 9600 (900.048 sec)
+INFO:tensorflow:Saving checkpoints for 9619 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 9686 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1285493, step = 9700 (910.645 sec)
+INFO:tensorflow:Saving checkpoints for 9752 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 291
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1196835, step = 9800 (913.694 sec)
+INFO:tensorflow:Saving checkpoints for 9818 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 9883 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109891
+INFO:tensorflow:source_words/sec: 286
+INFO:tensorflow:target_words/sec: 381
+INFO:tensorflow:loss = 1.1369312, step = 9900 (925.693 sec)
+INFO:tensorflow:Saving checkpoints for 9948 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2019-05-14T05:20:13Z
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-9948
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2019-05-14-05:20:27
+INFO:tensorflow:Saving dict for global step 9948: global_step = 9948, loss = 5.882312
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 9948: /local/run_onmt_3/model.ckpt-9948
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-9948
+INFO:tensorflow:Assets added to graph.
+INFO:tensorflow:Assets written to: /local/run_onmt_3/export/latest/temp-1557811227/assets
+INFO:tensorflow:SavedModel written to: /local/run_onmt_3/export/latest/temp-1557811227/saved_model.pb
+INFO:tensorflow:source_words/sec: 281
+INFO:tensorflow:target_words/sec: 375
+INFO:tensorflow:loss = 1.1250439, step = 10000 (933.199 sec)
+INFO:tensorflow:Saving checkpoints for 10012 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 10078 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1238122, step = 10100 (902.581 sec)
+INFO:tensorflow:Saving checkpoints for 10144 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1244228, step = 10200 (899.484 sec)
+INFO:tensorflow:Saving checkpoints for 10210 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 10276 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1226687, step = 10300 (906.259 sec)
+INFO:tensorflow:Saving checkpoints for 10344 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 291
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1185176, step = 10400 (914.797 sec)
+INFO:tensorflow:Saving checkpoints for 10410 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 10475 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1250961, step = 10500 (914.497 sec)
+INFO:tensorflow:Saving checkpoints for 10541 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.121968, step = 10600 (910.089 sec)
+INFO:tensorflow:Saving checkpoints for 10607 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 10673 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.121293, step = 10700 (903.602 sec)
+INFO:tensorflow:Saving checkpoints for 10741 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109987
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1236987, step = 10800 (900.060 sec)
+INFO:tensorflow:Saving checkpoints for 10807 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 10872 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1197641, step = 10900 (902.461 sec)
+INFO:tensorflow:Saving checkpoints for 10938 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 291
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1132188, step = 11000 (910.464 sec)
+INFO:tensorflow:Saving checkpoints for 11004 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 11070 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1154706, step = 11100 (916.338 sec)
+INFO:tensorflow:Saving checkpoints for 11138 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1210243, step = 11200 (912.880 sec)
+INFO:tensorflow:Saving checkpoints for 11204 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 11269 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1256436, step = 11300 (907.254 sec)
+INFO:tensorflow:Saving checkpoints for 11335 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1219523, step = 11400 (900.262 sec)
+INFO:tensorflow:Saving checkpoints for 11401 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 11467 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1376169, step = 11500 (901.075 sec)
+INFO:tensorflow:Saving checkpoints for 11535 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1173357, step = 11600 (904.947 sec)
+INFO:tensorflow:Saving checkpoints for 11601 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 11666 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.110025
+INFO:tensorflow:source_words/sec: 288
+INFO:tensorflow:target_words/sec: 384
+INFO:tensorflow:loss = 1.1154814, step = 11700 (922.332 sec)
+INFO:tensorflow:Saving checkpoints for 11732 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 11797 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1219366, step = 11800 (914.605 sec)
+INFO:tensorflow:Saving checkpoints for 11863 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1182295, step = 11900 (910.630 sec)
+INFO:tensorflow:Saving checkpoints for 11929 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2019-05-14T10:20:28Z
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-11929
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2019-05-14-10:20:42
+INFO:tensorflow:Saving dict for global step 11929: global_step = 11929, loss = 5.9234133
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 11929: /local/run_onmt_3/model.ckpt-11929
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-11929
+INFO:tensorflow:Assets added to graph.
+INFO:tensorflow:Assets written to: /local/run_onmt_3/export/latest/temp-1557829242/assets
+INFO:tensorflow:SavedModel written to: /local/run_onmt_3/export/latest/temp-1557829242/saved_model.pb
+INFO:tensorflow:Saving checkpoints for 11993 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 283
+INFO:tensorflow:target_words/sec: 376
+INFO:tensorflow:loss = 1.1194515, step = 12000 (924.786 sec)
+INFO:tensorflow:Saving checkpoints for 12059 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1406497, step = 12100 (901.259 sec)
+INFO:tensorflow:Saving checkpoints for 12127 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 12193 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1250348, step = 12200 (902.953 sec)
+INFO:tensorflow:Saving checkpoints for 12259 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 291
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1105845, step = 12300 (910.404 sec)
+INFO:tensorflow:Saving checkpoints for 12324 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 12390 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1286744, step = 12400 (916.866 sec)
+INFO:tensorflow:Saving checkpoints for 12456 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1216962, step = 12500 (912.082 sec)
+INFO:tensorflow:Saving checkpoints for 12523 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 12590 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109761
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1294833, step = 12600 (907.112 sec)
+INFO:tensorflow:Saving checkpoints for 12656 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1181529, step = 12700 (901.234 sec)
+INFO:tensorflow:Saving checkpoints for 12721 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 12787 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1181736, step = 12800 (902.136 sec)
+INFO:tensorflow:Saving checkpoints for 12853 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1152062, step = 12900 (905.064 sec)
+INFO:tensorflow:Saving checkpoints for 12919 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 12987 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1148373, step = 13000 (916.466 sec)
+INFO:tensorflow:Saving checkpoints for 13053 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1188884, step = 13100 (913.702 sec)
+INFO:tensorflow:Saving checkpoints for 13118 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 13184 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1194277, step = 13200 (912.652 sec)
+INFO:tensorflow:Saving checkpoints for 13250 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1240004, step = 13300 (902.437 sec)
+INFO:tensorflow:Saving checkpoints for 13316 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 13384 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1305789, step = 13400 (902.195 sec)
+INFO:tensorflow:Saving checkpoints for 13450 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.110325
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.120429, step = 13500 (901.502 sec)
+INFO:tensorflow:Saving checkpoints for 13515 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 13581 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.110168, step = 13600 (911.785 sec)
+INFO:tensorflow:Saving checkpoints for 13647 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 291
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1141126, step = 13700 (914.503 sec)
+INFO:tensorflow:Saving checkpoints for 13713 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 13781 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.113581, step = 13800 (912.941 sec)
+INFO:tensorflow:Saving checkpoints for 13847 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1160285, step = 13900 (905.688 sec)
+INFO:tensorflow:Saving checkpoints for 13912 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2019-05-14T15:20:46Z
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-13912
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2019-05-14-15:21:00
+INFO:tensorflow:Saving dict for global step 13912: global_step = 13912, loss = 5.9604697
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 13912: /local/run_onmt_3/model.ckpt-13912
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Restoring parameters from /local/run_onmt_3/model.ckpt-13912
+INFO:tensorflow:Assets added to graph.
+INFO:tensorflow:Assets written to: /local/run_onmt_3/export/latest/temp-1557847260/assets
+INFO:tensorflow:SavedModel written to: /local/run_onmt_3/export/latest/temp-1557847260/saved_model.pb
+INFO:tensorflow:Saving checkpoints for 13977 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 283
+INFO:tensorflow:target_words/sec: 377
+INFO:tensorflow:loss = 1.1298152, step = 14000 (923.197 sec)
+INFO:tensorflow:Saving checkpoints for 14043 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.127646, step = 14100 (899.964 sec)
+INFO:tensorflow:Saving checkpoints for 14108 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 14174 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1149374, step = 14200 (905.974 sec)
+INFO:tensorflow:Saving checkpoints for 14240 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 291
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.113879, step = 14300 (914.179 sec)
+INFO:tensorflow:Saving checkpoints for 14308 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 14374 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.109716
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1277372, step = 14400 (914.562 sec)
+INFO:tensorflow:Saving checkpoints for 14440 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1203864, step = 14500 (910.263 sec)
+INFO:tensorflow:Saving checkpoints for 14505 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 14571 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.115979, step = 14600 (903.233 sec)
+INFO:tensorflow:Saving checkpoints for 14637 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1177146, step = 14700 (900.529 sec)
+INFO:tensorflow:Saving checkpoints for 14705 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 14771 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.119965, step = 14800 (902.404 sec)
+INFO:tensorflow:Saving checkpoints for 14837 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 291
+INFO:tensorflow:target_words/sec: 387
+INFO:tensorflow:loss = 1.1098728, step = 14900 (910.252 sec)
+INFO:tensorflow:Saving checkpoints for 14903 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 14968 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1138972, step = 15000 (916.747 sec)
+INFO:tensorflow:Saving checkpoints for 15034 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 290
+INFO:tensorflow:target_words/sec: 386
+INFO:tensorflow:loss = 1.1158118, step = 15100 (912.263 sec)
+INFO:tensorflow:Saving checkpoints for 15101 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 15168 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 289
+INFO:tensorflow:target_words/sec: 385
+INFO:tensorflow:loss = 1.1260684, step = 15200 (907.333 sec)
+INFO:tensorflow:Saving checkpoints for 15233 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:Saving checkpoints for 15292 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:global_step/sec: 0.108626
+INFO:tensorflow:source_words/sec: 255
+INFO:tensorflow:target_words/sec: 340
+INFO:tensorflow:loss = 1.1270869, step = 15300 (1022.868 sec)
+INFO:tensorflow:Saving checkpoints for 15350 into /local/run_onmt_3/model.ckpt.
+INFO:tensorflow:Skip the current checkpoint eval due to throttle secs (18000 secs).
+INFO:tensorflow:source_words/sec: 281
+INFO:tensorflow:target_words/sec: 374
+INFO:tensorflow:loss = 1.1175838, step = 15400 (929.115 sec)

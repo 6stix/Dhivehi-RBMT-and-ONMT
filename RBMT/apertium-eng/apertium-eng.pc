@@ -1,0 +1,8 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+srcdir=${prefix}/share/apertium/apertium-eng
+
+Name: apertium-eng
+Description: Finite-state morphological transducer and constraint grammar for English 
+Version: 0.1.0
+
